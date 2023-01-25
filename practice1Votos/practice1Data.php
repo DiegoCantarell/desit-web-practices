@@ -41,6 +41,7 @@
         <br><br>
 
         <input type = "submit" name = "send" value = "Accept">
+        <input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Ver Datos" />
 </form>
     <?php
        /* $filename = 'salida.txt';
@@ -69,6 +70,8 @@
             echo "The file $filename is not writable";
         }*/
 
+       
+
         $fp = fopen("salida.txt","a+");
 
         if (isset($_POST['send'])){
@@ -81,6 +84,8 @@
            
             fwrite($fp,"$name,$partido\n");
         }
+
+        
         fclose($fp);
     ?>
 </head>

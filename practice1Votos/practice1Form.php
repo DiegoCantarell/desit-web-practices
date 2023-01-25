@@ -43,6 +43,7 @@
         
 
         <input type = "submit" name = "send" value = "Accept">
+        <input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Ver Datos" />
     </form>
 
     <?php
@@ -75,7 +76,7 @@
 
 
 
-
+      
 
         $fp = fopen("salida.txt","a+");
 
@@ -89,6 +90,8 @@
            
             fwrite($fp,"$name,$partido\n");
         }
+
+        
         fclose($fp);
     ?>
 
