@@ -70,8 +70,7 @@
             echo "The file $filename is not writable";
         }*/
 
-       
-
+    
         $fp = fopen("salida.txt","a+");
 
         if (isset($_POST['send'])){
