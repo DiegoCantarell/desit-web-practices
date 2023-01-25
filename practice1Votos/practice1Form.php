@@ -17,10 +17,10 @@
 
     <?php
         $fp = fopen("salida.txt","a");
-        if (isset($_POST['enviar'])){
-            $nombre = $_REQUEST['nombre'];
-            $edad = $_REQUEST['edad'];
-            echo "Name: $nombre <br>";
+        if (isset($_POST['send'])){
+            $nombre = $_REQUEST['name'];
+            
+            echo "Name: $name <br>";
            
             fwrite($fp,"$name\n");
         }
