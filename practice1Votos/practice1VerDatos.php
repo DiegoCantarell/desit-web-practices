@@ -75,6 +75,9 @@
 
 
         }
+
+        echo "<h2>VOTACIONES</h2>";
+
         echo "Partido 1 PRI = $suma1<br>";
         echo "Partido 2 PAN = $suma2<br>";
         echo "Partido 3 PRD = $suma3<br>";
