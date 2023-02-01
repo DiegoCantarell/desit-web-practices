@@ -81,10 +81,11 @@
                 echo "<br>";                
                 echo "Function union";       
                 echo "<br>";
-                $this -> arreglo=array();                
+                $this -> arreglo=array(); 
+                               
                 $a1 = $array1->getDat();
                 $a2 = $array2->getDat();
-                $a3 = $a1;
+                
                 $tamaño = $size1 + $size2;
                 
                 //foreach ($a1 = as $valor){
@@ -95,7 +96,7 @@
                 //$this->numdatos=count($this->arreglo);
 
                 //$this ->arreglo=$a3;
-                $j = 0;
+                
                 for($i=0;$i<$tamaño;$i++){
                     if($i < $size1 )
                         $this->arreglo[]=$a1[$i];
@@ -104,7 +105,17 @@
                         //$j++;
 
                 }
-                //$this ->arreglo=sort(array_merge($a1,$a2));
+                $a3 = $this->arreglo;
+                $a4 = $this->arreglo;
+                sort($a3);
+                //$arrlength = count($a3);
+                for($i = 0; $i < $tamaño; $i++) {
+                    $a4[$i] = $a3[$i];
+                    
+                }
+              
+
+                $this ->arreglo=$a4;
                 $this->numdatos=count($this->arreglo);
                 
             }
