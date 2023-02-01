@@ -36,19 +36,21 @@
                     echo $str;
             }
 
-            public function union($array1,$array2,$size1,$size2){
+            /*public function union($array1,$array2,$size1,$size2){
                 echo "<br>";
-                echo "<br>";
+                
                 echo "Function union";
-                echo "<br>";
+                
                 echo "<br>";
                 $this -> arreglo=array();
-                $array1 -> arreglo=array(10,20,30);
-                $array2 -> arreglo=array();
+                //$array1 -> arreglo=array();
+                //$array2 -> arreglo=array();
                 $arraySupport-> arreglo=array();
-                $a = array (10, 20, 30);
-                $array1=$array1->getDat();
-                $array2=$array2->getDat();
+
+                $array = array("foo", "bar", "hello", "world");
+                
+                $arrayOne = $array1->getDat();
+                $arrayTwo=$array2->getDat();
                 //$numdatos1 = $size1;
                 //$numdatos2 = $size2;
                 //$this->numdatos=$size1+$size2;
@@ -66,14 +68,45 @@
                         echo "El valor es: $valor";
                         $arraySupport->arreglo[]=$valor;
                     }   
-                }*/
-                foreach ($a as $valor){
-                    echo $valor;
+                }
+                foreach ($array = as $valor){
+                    echo "El valor es: $valor";
                   }
                 //$this ->arreglo=array_unique(array_merge($c1,$c2));
                 //$this->numdatos=count($this->arreglo);
-                $this ->arreglo=$arraySupport;
+                $this ->arreglo=$arrayOne;
                 $this->numdatos=count($this->arreglo);
+            }*/
+            public function union($array1,$array2,$size1,$size2){
+                echo "<br>";                
+                echo "Function union";       
+                echo "<br>";
+                $this -> arreglo=array();                
+                $a1 = $array1->getDat();
+                $a2 = $array2->getDat();
+                $a3 = $a1;
+                $tamaño = $size1 + $size2;
+                
+                //foreach ($a1 = as $valor){
+                  //  echo "El valor es: $valor";
+                //}
+
+                //$this ->arreglo=array_unique(array_merge($a1,$a2));
+                //$this->numdatos=count($this->arreglo);
+
+                //$this ->arreglo=$a3;
+                $j = 0;
+                for($i=0;$i<$tamaño;$i++){
+                    if($i < $size1 )
+                        $this->arreglo[]=$a1[$i];
+                    else
+                        $this->arreglo[]=$a2[$i - $size1];
+                        //$j++;
+
+                }
+                //$this ->arreglo=sort(array_merge($a1,$a2));
+                $this->numdatos=count($this->arreglo);
+                
             }
         }
 
