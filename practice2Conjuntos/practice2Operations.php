@@ -126,6 +126,45 @@
                 $this->numdatos=count($this->arreglo);
                 
             }
+            public function interseccion($array1,$array2,$size1,$size2){
+                echo "<br>";                
+                echo "Function union";       
+                echo "<br>";
+                $this -> arreglo=array(); 
+
+                $a3= []; 
+                               
+                $a1 = $array1->getDat();
+                $a2 = $array2->getDat();
+                
+                $tamaño = $size1 + $size2;
+
+                if($size1 > $size2){
+                    echo "Caso 1<br>";
+                    for($i = 0; $i < $size1; $i++) {
+                        for($j = 0; $j < $size2; $j++) {
+                            echo "Se compara $a1[$i] == $a2[$j] <br>";
+                            if($a1[$i] == $a2[$j])
+                            array_push($a3, $a1[$i]);
+                        }
+                        
+                    }
+                }
+                else{
+                    echo "Caso 2<br>";
+                    for($i = 0; $i < $size2; $i++) {
+                        for($j = 0; $j < $size1; $j++) {
+                            echo "Se compara $a2[$i] == $a1[$j] <br>";
+                            if($a2[$i] == $a1[$j])
+                            array_push($a3, $a2[$i]);
+                        }
+                        
+                    }
+
+                }
+                $this ->arreglo=$a3;
+                $this->numdatos=count($this->arreglo);
+            }
         }
 
 
@@ -151,11 +190,17 @@
         echo "<br>";
         echo "<br>";
 
-        echo ("Union:<br>");
+        echo ("<h2>UNION</h2><br>");
         $conj3= new set(0);
         $conj3->union($conj1,$conj2,$size1,$size2);
         $conj3->mostrar(" {");
         echo "<br>";
+        echo "<br>";
+
+        echo ("<h2>INTERSECCION</h2><br>");
+        $conj4= new set(0);
+        $conj4->interseccion($conj1,$conj2,$size1,$size2);
+        $conj4->mostrar(" {");
         echo "<br>";
 
 
