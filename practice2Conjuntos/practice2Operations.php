@@ -126,6 +126,13 @@
                 $this->numdatos=count($this->arreglo);
                 
             }
+            public function unionComprobacion($co1,$co2){
+                $this -> arreglo=array();
+                $c1=$co1->getDat();
+                $c2=$co2->getDat();
+                $this ->arreglo=array_unique(array_merge($c1,$c2));
+                $this->numdatos=count($this->arreglo);
+            }
             public function interseccion($array1,$array2,$size1,$size2){
                 echo "<br>";                
                 echo "Function union";       
@@ -165,6 +172,16 @@
                 $this ->arreglo=$a3;
                 $this->numdatos=count($this->arreglo);
             }
+            public function interseccionComprobacion($co1,$co2){
+                $this -> arreglo=array();
+                $c1=$co1->getDat();
+                $c2=$co2->getDat();
+                $this ->arreglo=array_intersect($c1,$c2);
+                $this->numdatos=count($this->arreglo);
+            }
+            public function diferencia1($array1,$array2,$size1,$size2){
+
+            }
         }
 
 
@@ -197,12 +214,23 @@
         echo "<br>";
         echo "<br>";
 
+        echo ("Union Comprobacion:<br>");
+        $conjUnion= new set(0);
+        $conjUnion->unionComprobacion($conj1,$conj2);
+        $conjUnion->mostrar(" {");
+        echo "<br>";
+
         echo ("<h2>INTERSECCION</h2><br>");
         $conj4= new set(0);
         $conj4->interseccion($conj1,$conj2,$size1,$size2);
         $conj4->mostrar(" {");
         echo "<br>";
-
+        
+        echo ("Interseccion Comprobacion:<br>");
+        $conjComprobacion= new set(0);
+        $conjComprobacion->interseccionComprobacion($conj1,$conj2);
+        $conjComprobacion->mostrar(" {");
+        echo "<br>";
 
 
     ?>
