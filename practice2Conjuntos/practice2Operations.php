@@ -113,9 +113,16 @@
                     $a4[$i] = $a3[$i];
                     
                 }
-              
+                $a5[0] =  $a4[0];
+                for($i = 1; $i <= $tamaño; $i++) {
+                    
+                     if($a4[$i] != $a5[$i-1])   
+                        $a5[$i] = $a4[$i];
+                    
+                    
+                }
 
-                $this ->arreglo=$a4;
+                $this ->arreglo=$a5;
                 $this->numdatos=count($this->arreglo);
                 
             }
