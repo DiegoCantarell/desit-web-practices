@@ -116,7 +116,7 @@
                 $a5[0] =  $a4[0];
                 for($i = 1; $i <= $tamaño; $i++) {
                     
-                     if($a4[$i] != $a5[$i-1])   
+                     if($a4[$i] != $a5[$i-1] && $a4[$i] != $a5[$i])   
                         $a5[$i] = $a4[$i];
                     
                     
@@ -134,9 +134,7 @@
                 $this->numdatos=count($this->arreglo);
             }
             public function interseccion($array1,$array2,$size1,$size2){
-                echo "<br>";                
-                echo "Function union";       
-                echo "<br>";
+                
                 $this -> arreglo=array(); 
 
                 $a3= []; 
@@ -150,7 +148,7 @@
                     echo "Caso 1<br>";
                     for($i = 0; $i < $size1; $i++) {
                         for($j = 0; $j < $size2; $j++) {
-                            echo "Se compara $a1[$i] == $a2[$j] <br>";
+                            //echo "Se compara $a1[$i] == $a2[$j] <br>";
                             if($a1[$i] == $a2[$j])
                             array_push($a3, $a1[$i]);
                         }
@@ -161,7 +159,7 @@
                     echo "Caso 2<br>";
                     for($i = 0; $i < $size2; $i++) {
                         for($j = 0; $j < $size1; $j++) {
-                            echo "Se compara $a2[$i] == $a1[$j] <br>";
+                            //echo "Se compara $a2[$i] == $a1[$j] <br>";
                             if($a2[$i] == $a1[$j])
                             array_push($a3, $a2[$i]);
                         }
@@ -180,7 +178,87 @@
                 $this->numdatos=count($this->arreglo);
             }
             public function diferencia1($array1,$array2,$size1,$size2){
+                $this -> arreglo=array(); 
 
+                $a3= []; 
+                               
+                $a1 = $array1->getDat();
+                $a2 = $array2->getDat();
+                
+                $tamaño = $size1 + $size2;
+
+                if($size1 > $size2){
+                    echo "Caso 1<br>";
+                    for($i = 0; $i < $size1; $i++) {
+                        $flag = 0;
+                        for($j = 0; $j < $size2; $j++) {
+                            //echo "Se compara $a1[$i] == $a2[$j] <br>";
+                            if($a1[$i] == $a2[$j]){
+                                $flag = 1;
+                            }
+                            
+                        }
+                        if($flag == 0){
+                            array_push($a3, $a1[$i]);
+                        }
+                        
+                    }
+                }
+                
+                $this ->arreglo=$a3;
+                $this->numdatos=count($this->arreglo);
+
+
+            }
+            public function diferencia2($array1,$array2,$size1,$size2){
+                $this -> arreglo=array(); 
+
+                $a3= []; 
+                               
+                $a1 = $array1->getDat();
+                $a2 = $array2->getDat();
+                
+                $tamaño = $size1 + $size2;
+
+            
+                
+                    echo "Caso 2<br>";
+                    for($i = 0; $i < $size2; $i++) {
+                        $flag = 0;
+                        for($j = 0; $j < $size1; $j++) {
+                            //echo "Se compara $a2[$i] == $a1[$j] <br>";
+                            
+                          
+                            if($a2[$i] == $a1[$j]){
+                                $flag = 1;
+                            }
+                        }
+                        if($flag == 0){
+                            array_push($a3, $a2[$i]);
+                        }
+                        
+                    }
+
+                
+                $this ->arreglo=$a3;
+                $this->numdatos=count($this->arreglo);
+
+
+            }
+            public function diferenciaA($co1,$co2){
+                $this -> arreglo=array();
+                $c1=$co1->getDat();
+                $c2=$co2->getDat();
+                $this ->arreglo=array_diff($c1,$c2);
+                $this->numdatos=count($this->arreglo);
+            }
+
+            public function diferenciaB($co2,$co1){
+                $this -> arreglo=array();
+                $c1=$co1->getDat();
+                $c2=$co2->getDat();
+                $this ->arreglo=array_diff($c2,$c1);
+                $this->numdatos=count($this->arreglo);
             }
         }
 
@@ -230,6 +308,34 @@
         $conjComprobacion= new set(0);
         $conjComprobacion->interseccionComprobacion($conj1,$conj2);
         $conjComprobacion->mostrar(" {");
+        echo "<br>";
+
+        echo ("<h2>DIFERENCIA SET1 - SET2</h2><br>");
+
+        echo ("Diferencia conjunto1 - conjunto 2:<br>");
+        $conj5= new set(0);
+        $conj5->diferencia1($conj1,$conj2,$size1,$size2);
+        $conj5->mostrar(" {");
+        echo "<br>";
+
+        echo ("Diferencia conjunto1 - conjunto 2:<br>");
+        $conjDiferenciaA= new set(0);
+        $conjDiferenciaA->diferenciaA($conj1,$conj2);
+        $conjDiferenciaA->mostrar(" {");
+        echo "<br>";
+
+        echo ("<h2>DIFERENCIA SET2 - SET1</h2><br>");
+
+        echo ("Diferencia conjunto 2 - conjunto 1:<br>");
+        $conj6= new set(0);
+        $conj6->diferencia2($conj1,$conj2,$size1,$size2);
+        $conj6->mostrar(" {");
+        echo "<br>";
+
+        echo ("Diferencia conjunto 2 - conjunto 1:<br>");
+        $conjDiferenciaB= new set(0);
+        $conjDiferenciaB->diferenciaB($conj2,$conj1);
+        $conjDiferenciaB->mostrar(" {");
         echo "<br>";
 
 
