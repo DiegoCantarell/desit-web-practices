@@ -1,0 +1,7 @@
+CREATE DATABASE votaciones;
+
+CREATE TABLE personas(
+  id_persona INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(128) NOT NULL,
+  actor VARCHAR(128) NOT NULL
+);
