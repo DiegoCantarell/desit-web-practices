@@ -53,27 +53,27 @@
         $name = isset($_POST["name"])? $_POST["name"]: "";
         $partido = isset($_POST["partido"])? $_POST["partido"]: "";
 
-
-        echo($name)."<br>";
-        echo($partido)."<br>";
+        echo "<strong>Información ingresada a la BD</strong><br><br>";
+        echo"Nombre: ".($name)."<br>";
+        echo"id de partido elegido: ".($partido)."<br>";
 
      
 
         if($partido == 1){
-           echo "partido1";
-           $partidoElegido = "PRI";
-           $personas = new personas();
-           $partidos = new partidos();
-           $numero = 10;
-            /*La variable usuario nos permite identificar el usuario que contiene contactos
-            La variable es llamada desde autenticación, iniciando la sesión, se válida
-            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
-            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
-            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
-            $personas->addPersona(null, $name, $partidoElegido );
-            $partidos -> updateNumeroVotos($numero,$partido);
+            echo "El partido elegido es el partido1 = PRI";
             echo "<br>";
-            echo "La persona se cargó correctamente a la BD";
+            $partidoElegido = "PRI";
+            $personas = new personas();
+            $partidos = new partidos();
+            $personas->addPersona(null, $name, $partidoElegido );
+            //$partidos->getNumeroVotos($partido);
+            $numeroOld = $partidos->getNumeroVotos($partido);
+            //echo ($numeroOld)."<br>";
+            $numeroNew = $numeroOld+1;
+            echo "El numero de votos actual en el partido PRI es: $numeroOld, se incrementa en un voto obteniendo: $numeroNew";
+            $partidos -> updateNumeroVotos($numeroNew,$partido);
+            echo "<br>";
+            echo "La información se cargó correctamente a la BD";
         }
 
         else if($partido == 2){
@@ -94,7 +94,7 @@
         else if($partido == 3){
             echo "partido3";
             $partidoElegido = "PRD";
-           $personas = new personas();
+            $personas = new personas();
             /*La variable usuario nos permite identificar el usuario que contiene contactos
             La variable es llamada desde autenticación, iniciando la sesión, se válida
             y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
