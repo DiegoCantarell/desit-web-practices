@@ -45,7 +45,10 @@
 </form>
     <?php
         include "class/sql.php";
-        include "class/contacto.php";
+        include "class/personas.php";
+        include "class/partidos.php";
+
+        
     
         $name = isset($_POST["name"])? $_POST["name"]: "";
         $partido = isset($_POST["partido"])? $_POST["partido"]: "";
@@ -54,19 +57,65 @@
         echo($name)."<br>";
         echo($partido)."<br>";
 
+     
+
         if($partido == 1){
            echo "partido1";
+           $partidoElegido = "PRI";
+           $personas = new personas();
+           $partidos = new partidos();
+           $numero = 10;
+            /*La variable usuario nos permite identificar el usuario que contiene contactos
+            La variable es llamada desde autenticación, iniciando la sesión, se válida
+            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
+            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
+            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
+            $personas->addPersona(null, $name, $partidoElegido );
+            $partidos -> updateNumeroVotos($numero,$partido);
+            echo "<br>";
+            echo "La persona se cargó correctamente a la BD";
         }
 
         else if($partido == 2){
             echo "partido2";
+          
+           $partidoElegido = "PAN";
+           $personas = new personas();
+            /*La variable usuario nos permite identificar el usuario que contiene contactos
+            La variable es llamada desde autenticación, iniciando la sesión, se válida
+            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
+            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
+            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
+            $personas->addPersona(null, $name, $partidoElegido );
+            echo "<br>";
+            echo "La persona se cargó correctamente a la BD";
             
         }
         else if($partido == 3){
             echo "partido3";
+            $partidoElegido = "PRD";
+           $personas = new personas();
+            /*La variable usuario nos permite identificar el usuario que contiene contactos
+            La variable es llamada desde autenticación, iniciando la sesión, se válida
+            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
+            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
+            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
+            $personas->addPersona(null, $name, $partidoElegido );
+            echo "<br>";
+            echo "La persona se cargó correctamente a la BD";
         }
         else if($partido == 4){
             echo "partido4";
+            $partidoElegido = "NULO";
+            $personas = new personas();
+            /*La variable usuario nos permite identificar el usuario que contiene contactos
+            La variable es llamada desde autenticación, iniciando la sesión, se válida
+            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
+            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
+            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
+            $personas->addPersona(null, $name, $partidoElegido );
+            echo "<br>";
+            echo "La persona se cargó correctamente a la BD";
         }
 
 
