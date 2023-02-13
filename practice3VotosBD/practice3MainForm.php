@@ -47,6 +47,30 @@
         include "class/sql.php";
         include "class/contacto.php";
     
+        $name = isset($_POST["name"])? $_POST["name"]: "";
+        $partido = isset($_POST["partido"])? $_POST["partido"]: "";
+
+
+        echo($name)."<br>";
+        echo($partido)."<br>";
+
+        if($partido == 1){
+           echo "partido1";
+        }
+
+        else if($partido == 2){
+            echo "partido2";
+            
+        }
+        else if($partido == 3){
+            echo "partido3";
+        }
+        else if($partido == 4){
+            echo "partido4";
+        }
+
+
+
 
     ?>
 </head>
