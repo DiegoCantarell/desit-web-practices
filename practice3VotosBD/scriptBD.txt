@@ -13,3 +13,10 @@ CREATE TABLE partidos(
   numero_votos INT NOT NULL
     
 );
+
+//Insert partidos
+
+insert into partidos VALUES(null,"PRI",0);
+insert into partidos VALUES(null,"PAN",0);
+insert into partidos VALUES(null,"PRD",0);
+insert into partidos VALUES(null,"NULO",0);
