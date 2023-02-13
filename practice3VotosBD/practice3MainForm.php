@@ -41,7 +41,7 @@
         <br><br>
 
         <input type = "submit" name = "send" value = "Accept">
-        <input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Ver Datos" />
+        <input type="button" onclick="window.location.href='practice3VerDatos.php';" value="Ver Datos de los Partidos" />
 </form>
     <?php
         include "class/sql.php";
