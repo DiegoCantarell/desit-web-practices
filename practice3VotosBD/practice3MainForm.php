@@ -77,45 +77,55 @@
         }
 
         else if($partido == 2){
-            echo "partido2";
-          
-           $partidoElegido = "PAN";
-           $personas = new personas();
-            /*La variable usuario nos permite identificar el usuario que contiene contactos
-            La variable es llamada desde autenticación, iniciando la sesión, se válida
-            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
-            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
-            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
-            $personas->addPersona(null, $name, $partidoElegido );
+            echo "El partido elegido es el partido2 = PAN";
             echo "<br>";
-            echo "La persona se cargó correctamente a la BD";
+            $partidoElegido = "PAN";
+            $personas = new personas();
+            $partidos = new partidos();
+            $personas->addPersona(null, $name, $partidoElegido );
+            //$partidos->getNumeroVotos($partido);
+            $numeroOld = $partidos->getNumeroVotos($partido);
+            //echo ($numeroOld)."<br>";
+            $numeroNew = $numeroOld+1;
+            echo "El numero de votos actual en el partido PAN es: $numeroOld, se incrementa en un voto obteniendo: $numeroNew";
+            $partidos -> updateNumeroVotos($numeroNew,$partido);
+            echo "<br>";
+            echo "La información se cargó correctamente a la BD";
+            
             
         }
         else if($partido == 3){
-            echo "partido3";
+            echo "El partido elegido es el partido2 = PRD";
+            echo "<br>";
             $partidoElegido = "PRD";
             $personas = new personas();
-            /*La variable usuario nos permite identificar el usuario que contiene contactos
-            La variable es llamada desde autenticación, iniciando la sesión, se válida
-            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
-            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
-            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
+            $partidos = new partidos();
             $personas->addPersona(null, $name, $partidoElegido );
+            //$partidos->getNumeroVotos($partido);
+            $numeroOld = $partidos->getNumeroVotos($partido);
+            //echo ($numeroOld)."<br>";
+            $numeroNew = $numeroOld+1;
+            echo "El numero de votos actual en el partido PRD es: $numeroOld, se incrementa en un voto obteniendo: $numeroNew";
+            $partidos -> updateNumeroVotos($numeroNew,$partido);
             echo "<br>";
-            echo "La persona se cargó correctamente a la BD";
+            echo "La información se cargó correctamente a la BD";
         }
         else if($partido == 4){
-            echo "partido4";
-            $partidoElegido = "NULO";
-            $personas = new personas();
-            /*La variable usuario nos permite identificar el usuario que contiene contactos
-            La variable es llamada desde autenticación, iniciando la sesión, se válida
-            y al poner el archivo valida.php en el presente archivo, se ejecuta el script, es lo primero que hace
-            se manda el header, siempre y cuando no s eha escrito nada en la pantalla
-            esto nos sirve ya que primero hace la validación y luego todo lo demás*/
-            $personas->addPersona(null, $name, $partidoElegido );
+            echo "El partido elegido es el partido2 = NULO";
             echo "<br>";
-            echo "La persona se cargó correctamente a la BD";
+            $partidoElegido = "PAN";
+            $personas = new personas();
+            $partidos = new partidos();
+            $personas->addPersona(null, $name, $partidoElegido );
+            //$partidos->getNumeroVotos($partido);
+            $numeroOld = $partidos->getNumeroVotos($partido);
+            //echo ($numeroOld)."<br>";
+            $numeroNew = $numeroOld+1;
+            echo "El numero de votos actual en el partido PAN es: $numeroOld, se incrementa en un voto obteniendo: $numeroNew";
+            $partidos -> updateNumeroVotos($numeroNew,$partido);
+            echo "<br>";
+            echo "La información se cargó correctamente a la BD";
+
         }
 
 
