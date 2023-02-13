@@ -1,7 +1,13 @@
-CREATE DATABASE votaciones;
-
 CREATE TABLE personas(
   id_persona INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(128) NOT NULL,
-  actor VARCHAR(128) NOT NULL
+  partido VARCHAR(128) NOT NULL
+  
+);
+
+CREATE TABLE partidos(
+  id_partido INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(128) NOT NULL,
+  numero_votos INT NOT NULL
+    
 );
