@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data</title>
-    <h2>Students</h2>
+    <title>Form P3</title>
+    <h2>Sistema Votaciones</h2>
     <link rel="stylesheet" href="css/styles.css">
-    <form action = "practice1Form.php" method = "POST">
+    <form action = "practice3MainForm.php" method = "POST">
         Type your name:
         <input type = "text" name = "name" required>
         <br><br>
-
+        <p>Selecciona tu partido</p>
         <div class class="divLine ">Partido 1
         <img src="images/pri.webp" alt="PRI" width="42" height="42">
         <input type="radio" name="partido" id="partido1" value="1"/>
@@ -44,7 +44,8 @@
         <input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Ver Datos" />
 </form>
     <?php
- 
+        include "class/sql.php";
+        include "class/contacto.php";
     
 
     ?>
