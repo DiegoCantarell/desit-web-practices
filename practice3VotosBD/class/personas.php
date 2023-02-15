@@ -16,6 +16,18 @@ class personas{
         $this->result= $this->sql->ejecutar($sql);
 
     }
+
+    /*public function getAllData(){
+      echo "<p>Entrando al método</p>";
+      echo "<SELECT name = 'personas'>"
+        while($row = $this->result->fetch_assoc()){
+          echo "$row["id_persona"]";
+          echo"<td>".$row["nombre"]."</td>";
+          echo"<td>".$row["partido"]."</td>";
+        }
+        echo "</select>"
+    }*/
+
     /*Se necesita identificar que usuario es el actual*/
     public function muestraContacto($usuario){
         $sql = "SELECT * FROM `contacto` WHERE usuario = '".$usuario."'";

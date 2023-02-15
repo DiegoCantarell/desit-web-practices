@@ -8,13 +8,15 @@
 </head>
 <body>
     <h1>View the Data</h1>
+    
     <?php
         include "class/sql.php";
         include "class/personas.php";
         include "class/partidos.php";
-        $partidos = new partidos();
+        //$partidos = new partidos();
+        //personas = new personas();
 
-        $partidos->getAllData();
+        //$personas->getAllData();
     ?>
 </body>
 </html>
