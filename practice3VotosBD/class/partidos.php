@@ -43,6 +43,10 @@ class partidos{
       return $numero;
   }
 
+  public function getAllData(){
+    echo "See the data";
+  }
+
 
  
     public function crearContacto($id, $nom, $tel, $dir, $correo, $foto, $usuario){
