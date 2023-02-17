@@ -25,10 +25,20 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		color: "#014D65",
 		dataPoints: [
             <?php
-			echo "{ y: 3, label: 'PRI' },";
-			echo "{ y: 7, label: 'PAN' },";
-			echo "{ y: 5, label: 'PRD' },";
-			echo "{ y: 9, label: 'NULO' },";
+            include "class/sql.php";
+            include "class/personas.php";
+            include "class/partidos.php";
+            $partidos = new partidos();
+            $PRI = $partidos->getNumeroVotos(1);
+            $PAN = $partidos->getNumeroVotos(2);
+            $PRD = $partidos->getNumeroVotos(3);
+            $NULO = $partidos->getNumeroVotos(4);
+            
+
+			echo "{ y: $PRI, label: 'PRI' },";
+			echo "{ y: $PAN, label: 'PAN' },";
+			echo "{ y: $PRD, label: 'PRD' },";
+			echo "{ y: $NULO, label: 'NULO' },";
             ?>
 			
 		]
