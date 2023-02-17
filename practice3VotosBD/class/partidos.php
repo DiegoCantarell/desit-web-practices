@@ -23,29 +23,16 @@ class partidos{
     public function getNumeroVotos($id_partido){
       $sql = "SELECT * FROM `partidos` WHERE id_partido = '".$id_partido."'";
       $this->result= $this->sql->ejecutar($sql);
-
       if($this->result-> num_rows >0){
-         
-
           while($row = $this->result->fetch_assoc()){
-             
-              
-             
               $numero = $row["numero_votos"];
               //echo $numero;
-              
-
-              
-             
-          }
-          
+          }     
       }
       return $numero;
-  }
+    }
 
-  public function getAllData(){
-    echo "See the data";
-  }
+
 
 
  
