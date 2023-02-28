@@ -1,5 +1,5 @@
 <?php
-class partidos{
+class pets{
     //Indicamos el tipo de dato
     public $sql;
     public function __construct(){
@@ -33,6 +33,39 @@ class partidos{
       }
       return $numero;
     }
+    public function getAllPets(){
+      $sql = "SELECT * FROM `pets` ;
+      echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+
+      if($this->result-> num_rows >0){
+          echo "<table class=\"table table-striped\">";
+          echo "<tr>";
+          echo "<th></th>";
+          echo "<th>id_pet</th>";
+          echo "<th>name</th>";
+          echo "<th>id_user_adopt</th>";
+          echo "<th>status</th>";
+          echo "<th></th>";
+          echo "</tr>";
+
+          while($row = $this->result->fetch_assoc()){
+              echo "<tr>";
+              echo"<td><img src='".$row["foto"]."' style=\"width: 70px; border-radius: 50%;\"></td>";
+              echo"<td>".$row["id_pet"]."</td>";
+              echo"<td>".$row["name"]."</td>";
+              echo"<td>".$row["id_user_adopt"]."</td>";
+              echo"<td>".$row["status"]."</td>";
+              echo "</tr>";
+          }
+          echo "<table>";
+      }
+      public function getAllPets2(){
+        
+            echo "Hello";
+        }
+
+  }
    
 
  

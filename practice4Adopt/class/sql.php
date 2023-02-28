@@ -34,7 +34,7 @@ class sql{
         ponerla*/
         $password= ""; //Variable para contrasena
         /*Por último se define la base a la que se va a conectar*/
-        $dbName="votaciones"; //Esta base de datos se va a llamar AGENDA
+        $dbName="adoptions"; //Esta base de datos se va a llamar AGENDA
     /*Una vez creados los elementos, se van a definir los eventos*/
     //Se crea la comunicación
         $this->conn=new mysqli($serverName, $userName,$password, $dbName ); //conn igual a una nueva instancia del mysquli

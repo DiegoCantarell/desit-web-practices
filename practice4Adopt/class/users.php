@@ -1,5 +1,5 @@
 <?php
-class personas{
+class users{
     //Indicamos el tipo de dato
     public $sql;
     public function __construct(){
@@ -8,11 +8,11 @@ class personas{
         $this->sql=new sql();
     }
  
-    public function addPersona($id_persona, $nombre, $numero_votos){
+    public function addUser($id_persona, $name, $pets_number){
         //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
 
         //le mandamos la consulta por paso de parametros
-        $sql = "insert into personas values(null,'". $nombre."', '". $numero_votos."')";
+        $sql = "insert into users values(null,'". $name."', '". $pets_number."')";
         $this->result= $this->sql->ejecutar($sql);
 
     }
