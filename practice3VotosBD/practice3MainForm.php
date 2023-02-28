@@ -41,7 +41,12 @@
         <br><br>
 
         <input type = "submit" name = "send" value = "Accept">
+<<<<<<< HEAD
         <input type="button" onclick="window.location.href='practice3VerDatos.php';" value="Ver Datos de los Partidos" />
+=======
+        <input type="button" onclick="window.location.href='practice3ViewData.php';" value="Ver Datos de Votantes" />
+        <input type="button" onclick="window.location.href='practice3ViewDataGraphic.php';" value="Ver Gráfica partidos" />
+>>>>>>> 58c9f41edaa8face94a8f73f7bf69e81b14e5639
 </form>
     <?php
         include "class/sql.php";

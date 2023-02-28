@@ -23,17 +23,26 @@ class partidos{
     public function getNumeroVotos($id_partido){
       $sql = "SELECT * FROM `partidos` WHERE id_partido = '".$id_partido."'";
       $this->result= $this->sql->ejecutar($sql);
-
       if($this->result-> num_rows >0){
           while($row = $this->result->fetch_assoc()){
               $numero = $row["numero_votos"];
               //echo $numero;
+<<<<<<< HEAD
           }
           
       }
       return $numero;
     }
    
+=======
+          }     
+      }
+      return $numero;
+    }
+
+
+
+>>>>>>> 58c9f41edaa8face94a8f73f7bf69e81b14e5639
 
  
     public function crearContacto($id, $nom, $tel, $dir, $correo, $foto, $usuario){
