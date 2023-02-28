@@ -1,0 +1,22 @@
+create database adoptions;
+
+CREATE TABLE users(
+  id_user INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(128) NOT NULL,
+  pets_number INT NOT NULL
+  
+  
+);
+
+CREATE TABLE pets(
+  id_pet INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(128) NOT NULL,
+  id_user_adopt INT NOT NULL,
+  status INT NOT NULL
+    
+);
+
+//Insert partidos
+
+insert into users VALUES(null,"Diego",0);
+insert into pets VALUES(null,"max",1,0);
