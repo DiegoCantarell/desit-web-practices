@@ -16,6 +16,15 @@ class personas{
         $this->result= $this->sql->ejecutar($sql);
 
     }
+    public function getAllUsersList(){
+      echo "View All Users list";
+      echo"<select name="pelicula" id=""></select>";
+    }
+
+
+
+
+
     /*Se necesita identificar que usuario es el actual*/
     public function muestraContacto($usuario){
         $sql = "SELECT * FROM `contacto` WHERE usuario = '".$usuario."'";
