@@ -25,24 +25,15 @@ class partidos{
       $this->result= $this->sql->ejecutar($sql);
 
       if($this->result-> num_rows >0){
-         
-
           while($row = $this->result->fetch_assoc()){
-             
-              
-             
               $numero = $row["numero_votos"];
               //echo $numero;
-              
-
-              
-             
           }
           
       }
       return $numero;
-  }
-
+    }
+   
 
  
     public function crearContacto($id, $nom, $tel, $dir, $correo, $foto, $usuario){
