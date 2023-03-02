@@ -14,7 +14,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		interval: 1
 	},
 	axisY2:{
-		interlacedColor: "rgba(1,77,101,.2)",
+		interlacedColor: "rgba(240, 10, 10 )",
 		gridColor: "rgba(1,77,101,.1)",
 		title: "Votos"
 	},
