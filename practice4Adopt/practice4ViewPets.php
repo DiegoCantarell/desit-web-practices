@@ -11,13 +11,9 @@
     <?php
     include "class/sql.php";
     include "class/pets.php";
-    //include "class/partidos.php";
-
-    
     $pets = new pets();
     //$partidos = new partidos();
-
-    $pets->getAllPets2();
+    $pets->getAllPets();
     ?>
     
 </body>
