@@ -46,6 +46,7 @@ class pets{
             echo "<table>";
         }
     }
+    
       
 }
 ?>
