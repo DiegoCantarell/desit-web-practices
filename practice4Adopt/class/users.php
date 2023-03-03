@@ -7,6 +7,45 @@ class users{
         //Es la conexión a la base de datos
         $this->sql=new sql();
     }
+
+    public function getAllUsers(){
+      $sql = "SELECT * FROM `users` ";
+      //echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+      
+      
+        if($this->result-> num_rows >0){
+
+          echo "<table class=\"table table-striped\">"; 
+
+            echo "<tr>";
+
+            echo "<th></th>";
+            echo "<th>id_user</th>";
+            echo "<th></th>";
+            echo "<th>name</th>";
+            echo "<th></th>";
+            echo "<th>pets_number</th>";
+            echo "<th></th>";
+            
+            echo "</tr>";
+    
+            while($row = $this->result->fetch_assoc()){
+                echo "<tr>";
+
+                echo "<th></th>";
+                echo"<td>".$row["id_user"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["name"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["pets_number"]."</td>";
+                echo "<th></th>";
+
+                echo "</tr>";
+            }
+            echo "<table>";
+        }
+    }
  
     public function addUser($id_persona, $name, $pets_number){
         //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
@@ -16,10 +55,7 @@ class users{
         $this->result= $this->sql->ejecutar($sql);
 
     }
-    public function getAllUsersList(){
-      echo "View All Users list";
-      echo"<select name="pelicula" id=""></select>";
-    }
+
 
 
 
