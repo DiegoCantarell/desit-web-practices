@@ -46,15 +46,32 @@ class users{
             echo "<table>";
         }
     }
- 
-    public function addUser($id_persona, $name, $pets_number){
-        //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
+    public function addUser( $id_user, $name, $pets_number){
+      //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
 
-        //le mandamos la consulta por paso de parametros
-        $sql = "insert into users values(null,'". $name."', '". $pets_number."')";
-        $this->result= $this->sql->ejecutar($sql);
+      //le mandamos la consulta por paso de parametros
+      $sql = "insert into users values(null,'". $name."', '". $pets_number."')";
+      //echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
 
     }
+
+  public function getPetsNumber($name){
+    $sql = "SELECT * FROM `users` WHERE name = '".$name."'";
+    //echo $sql;
+    $this->result= $this->sql->ejecutar($sql);
+
+    if($this->result-> num_rows >0){
+        while($row = $this->result->fetch_assoc()){
+            $numero = $row["pets_number"];
+            //echo $numero;
+        }
+        
+    }
+    return $numero;
+  }
+ 
+    
 
 
 
