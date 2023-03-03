@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td> <input type="button" onclick="window.location.href='practice4ViewPets.php';" value="Catalogue of pets" /></td>
-        <td> <input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Catalogue of users" /></td>
+        <td> <input type="button" onclick="window.location.href='practice4ViewUsers.php';" value="Catalogue of users" /></td>
         <td><input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Add user" /></td>
         <td> <input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Add pet" /></td>
         <td><input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Generate pdf" /></td>
