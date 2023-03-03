@@ -15,6 +15,6 @@
     //$partidos = new partidos();
     $pets->getAllPets();
     ?>
-    
+    <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
 </body>
 </html>
