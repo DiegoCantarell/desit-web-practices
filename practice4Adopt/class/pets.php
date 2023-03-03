@@ -46,6 +46,15 @@ class pets{
             echo "<table>";
         }
     }
+    public function addPet( $id_pet, $name, $id_user_adopt,$status){
+      //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
+
+      //le mandamos la consulta por paso de parametros
+      $sql = "insert into pets values(null,'". $name."', '". $id_user_adopt."', '". $status."')";
+      echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+
+    }
     
       
 }
