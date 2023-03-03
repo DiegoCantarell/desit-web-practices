@@ -55,6 +55,40 @@ class pets{
       $this->result= $this->sql->ejecutar($sql);
 
     }
+
+
+    public function getAllNames(){
+      echo "<p>Entrando al método</p>";
+        $sql = "SELECT * FROM `pets` ";
+        $this->result= $this->sql->ejecutar($sql);
+
+
+        echo "<SELECT name = 'pets'>";
+        if($this->result-> num_rows >0){
+
+
+          while($row = $this->result->fetch_assoc()){
+              echo "<tr>";
+              
+              $id_pet = $row["id_pet"];
+              $name = $row["name"];
+              $id_user_adopt = $row["id_user_adopt"];
+              $status = $row["status"];
+              
+              //echo "$id <br>";
+              //echo "$nombre<br>";
+              //echo "$partido<br>";
+              echo "<option value=$id_pet>$name</option>";
+              
+          }
+          echo "</select>";
+          
+          //$this->result= $this->sql->ejecutar($sql);
+          
+         
+      }
+    }
+
     
       
 }
