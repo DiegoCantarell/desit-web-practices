@@ -9,6 +9,8 @@
 <body>
     <h1>Welcome to the adoption section</h1>
     <p>The user only can adopt 2 pets</p>
+
+    <p>The pets available are: </p>
     <?php
     include "class/sql.php";
     include "class/pets.php";
