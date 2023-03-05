@@ -62,26 +62,40 @@ class pets{
         $sql = "SELECT * FROM `pets` ";
         $this->result= $this->sql->ejecutar($sql);
 
+        echo "<form action='practice4AdoptBackend.php'>";
+          echo "Type your name:";
+          echo "<input type = 'text' name = 'name' required>";
+          echo "<br><br>";
 
-        echo "<SELECT name = 'pets'>";
-        if($this->result-> num_rows >0){
+
+          echo "<SELECT name = 'pets'>";
+          if($this->result-> num_rows >0){
 
 
-          while($row = $this->result->fetch_assoc()){
-              echo "<tr>";
-              
-              $id_pet = $row["id_pet"];
-              $name = $row["name"];
-              $id_user_adopt = $row["id_user_adopt"];
-              $status = $row["status"];
-              
-              //echo "$id <br>";
-              //echo "$nombre<br>";
-              //echo "$partido<br>";
-              echo "<option value=$id_pet>$name</option>";
-              
-          }
+            while($row = $this->result->fetch_assoc()){
+                echo "<tr>";
+                
+                $id_pet = $row["id_pet"];
+                $name = $row["name"];
+                $id_user_adopt = $row["id_user_adopt"];
+                $status = $row["status"];
+                
+                //echo "$id <br>";
+                //echo "$nombre<br>";
+                //echo "$partido<br>";
+                if($status == 1)
+                  echo "<option value=$name>$name</option>";
+                
+            }
           echo "</select>";
+          echo "<br>";
+          echo "<input type='submit' value='Submit'>";
+          echo "</form>";
+          
+          $name = isset($_POST["name"])? $_POST["name"]: "";
+          echo"Nombre: ".($name)."<br>";
+
+
           
           //$this->result= $this->sql->ejecutar($sql);
           
