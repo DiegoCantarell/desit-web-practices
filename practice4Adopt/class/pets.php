@@ -65,26 +65,29 @@ class pets{
           echo "Type your name:";
           echo "<input type = 'text' name = 'name' required>";
           echo "<br><br>";
-          echo "<SELECT name = 'pets'>";
+
+          echo "<label for='pets'>Choose a pet: </label>";
+          echo "<select name = 'pets' id='pets' required>";
+          echo "<optgroup label='Available pets'>";
           if($this->result-> num_rows >0){
             while($row = $this->result->fetch_assoc()){
-                echo "<tr>";           
-                $id_pet = $row["id_pet"];
-                $name_pet = $row["name"];
+               
+                $pet_id = $row["id_pet"];
+                $pet_name = $row["name"];
                 $id_user_adopt = $row["id_user_adopt"];
                 $status = $row["status"];
                 if($status == 1)
-                  echo "<option value=$name_pet>$name_pet</option>";               
+                  echo "<option value= $pet_id >$pet_name</option>";               
             }
+          }
+          $pet_name = "exe";
+          echo "</optgroup>";
           echo "</select>";
+          echo "<br>";
+          echo "<br>";
           echo "<br>";
           echo "<input type='submit' value='Submit'>";
           echo "</form>";
-          //$this->result= $this->sql->ejecutar($sql);
-          
-         
-      }
-
     }
 
     
