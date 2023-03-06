@@ -9,10 +9,13 @@
 <body>
     <h1>Info about the adoption</h1>
     <?php
+        //$name = isset($_POST['name'])? $_POST['name']: "";
+        //$pet_name = isset($_POST['pet_name'])? $_POST['pet_name']: "";
+
         $name = $_REQUEST['name'];
-        $name_pet = $_REQUEST['name_pet'];
+        $pet_id = $_REQUEST['pets'];
         echo "Name: $name <br>";
-        echo "Pet name : $name_pet <br>";
+        echo "Pet ID : $pet_id <br>";
     ?>
 </body>
 </html>
