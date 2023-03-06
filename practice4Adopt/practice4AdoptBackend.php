@@ -9,8 +9,10 @@
 <body>
     <h1>Info about the adoption</h1>
     <?php
-    $name = isset($_POST["name"])? $_POST["name"]: "";
-    echo"Nombre: ".($name)."<br>";
+        $name = $_REQUEST['name'];
+        $name_pet = $_REQUEST['name_pet'];
+        echo "Name: $name <br>";
+        echo "Pet name : $name_pet <br>";
     ?>
 </body>
 </html>
