@@ -62,8 +62,8 @@ class pets{
         $sql = "SELECT * FROM `pets` ";
         $this->result= $this->sql->ejecutar($sql);
         echo "<form action='practice4AdoptBackend.php'>";
-          echo "Type your name:";
-          echo "<input type = 'text' name = 'name' required>";
+          echo "Type your user ID:";
+          echo "<input type = 'number' name = 'user_id' required>";
           echo "<br><br>";
 
           echo "<label for='pets'>Choose a pet: </label>";
