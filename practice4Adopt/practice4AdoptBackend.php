@@ -12,10 +12,11 @@
         //$name = isset($_POST['name'])? $_POST['name']: "";
         //$pet_name = isset($_POST['pet_name'])? $_POST['pet_name']: "";
 
-        $name = $_REQUEST['name'];
+        $user_id = $_REQUEST['user_id'];
         $pet_id = $_REQUEST['pets'];
-        echo "Name: $name <br>";
+        echo "User ID: $user_id <br>";
         echo "Pet ID : $pet_id <br>";
     ?>
+     <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
 </body>
 </html>
