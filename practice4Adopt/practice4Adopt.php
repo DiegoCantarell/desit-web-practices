@@ -14,8 +14,16 @@
     <?php
     include "class/sql.php";
     include "class/pets.php";
+    include "class/users.php";
+    echo "<form action='practice4AdoptBackend.php'>";
+    $users = new users();
+    $users->getAllUserNames();
     $pets = new pets();
-    $pets->getAllNames();
+    $pets->getAllPetNames();
+    echo "<br>";
+    echo "<input type='submit' value='Submit'>";
+    echo "</form>";
+    
     ?>
     <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
 </body>
