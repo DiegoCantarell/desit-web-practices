@@ -46,6 +46,44 @@ class users{
             echo "<table>";
         }
     }
+    public function getAllUserInfobyId($id_user){
+      $sql = "SELECT * FROM `users` where id_user = '".$id_user."'";
+      //echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+      
+      
+        if($this->result-> num_rows >0){
+
+          echo "<table class=\"table table-striped\">"; 
+
+            echo "<tr>";
+
+            echo "<th></th>";
+            echo "<th>id_user</th>";
+            echo "<th></th>";
+            echo "<th>name</th>";
+            echo "<th></th>";
+            echo "<th>pets_number</th>";
+            echo "<th></th>";
+            
+            echo "</tr>";
+    
+            while($row = $this->result->fetch_assoc()){
+                echo "<tr>";
+
+                echo "<th></th>";
+                echo"<td>".$row["id_user"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["name"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["pets_number"]."</td>";
+                echo "<th></th>";
+
+                echo "</tr>";
+            }
+            echo "<table>";
+        }
+    }
     public function addUser( $id_user, $name, $pets_number){
       //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
 
@@ -107,6 +145,41 @@ class users{
         //echo "<input type='submit' value='Submit'>";
         //echo "</form>";
   }
+
+  public function getAllUserNamesNoRestriction(){
+    
+    $sql = "SELECT * FROM `users` ";
+    $this->result= $this->sql->ejecutar($sql);
+    //echo "<form action='practice4AdoptBackend.php'>";
+      //echo "Type your user ID:";
+      //echo "<input type = 'number' name = 'user_id' required>";
+      echo "<br><br>";
+      //TEST
+      echo "<label for='users'>Choose a user: </label>";
+      echo "<select name = 'users' id='users' required>";
+      echo "<optgroup label='Available Users'>";
+      if($this->result-> num_rows >0){
+        while($row = $this->result->fetch_assoc()){
+           
+            $id_user = $row["id_user"];
+            $name = $row["name"];
+            $pets_number = $row["pets_number"];
+            
+            
+            echo "<option value= $id_user>$name</option>";               
+        }
+      }
+      
+      echo "</optgroup>";
+      echo "</select>";
+      //TEST
+
+      echo "<br>";
+      echo "<br>";
+      echo "<br>";
+      //echo "<input type='submit' value='Submit'>";
+      //echo "</form>";
+}
 
   public function searchUserById($id_user){
     $sql = "SELECT * FROM `users` where id_user = '".$id_user."'";
