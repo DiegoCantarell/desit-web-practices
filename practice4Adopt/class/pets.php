@@ -57,27 +57,27 @@ class pets{
     }
 
 
-    public function getAllNames(){
-      echo "<p>Entrando al método</p>";
+    public function getAllPetNames(){
+      
         $sql = "SELECT * FROM `pets` ";
         $this->result= $this->sql->ejecutar($sql);
-        echo "<form action='practice4AdoptBackend.php'>";
-          echo "Type your user ID:";
-          echo "<input type = 'number' name = 'user_id' required>";
+        //echo "<form action='practice4AdoptBackend.php'>";
+          //echo "Type your user ID:";
+          //echo "<input type = 'number' name = 'user_id' required>";
           echo "<br><br>";
-
+          
           echo "<label for='pets'>Choose a pet: </label>";
           echo "<select name = 'pets' id='pets' required>";
           echo "<optgroup label='Available pets'>";
           if($this->result-> num_rows >0){
             while($row = $this->result->fetch_assoc()){
                
-                $pet_id = $row["id_pet"];
+                $id_pet = $row["id_pet"];
                 $pet_name = $row["name"];
                 $id_user_adopt = $row["id_user_adopt"];
                 $status = $row["status"];
                 if($status == 1)
-                  echo "<option value= $pet_id >$pet_name</option>";               
+                  echo "<option value= $id_pet>$pet_name</option>";               
             }
           }
           $pet_name = "exe";
@@ -86,8 +86,27 @@ class pets{
           echo "<br>";
           echo "<br>";
           echo "<br>";
-          echo "<input type='submit' value='Submit'>";
-          echo "</form>";
+          //echo "<input type='submit' value='Submit'>";
+          //echo "</form>";
+    }
+
+
+    public function searchPetById($id_pet){
+      $sql = "SELECT * FROM `pets` where id_pet = '".$id_pet."'";
+      $this->result= $this->sql->ejecutar($sql);
+      //echo $sql;
+      echo "<br><br>";
+      if($this->result-> num_rows >0){
+        while($row = $this->result->fetch_assoc()){
+            $pet_name = $row["name"];
+            echo "the pet name associated  with the ID is: <strong>$pet_name</strong>";
+            echo "<br><br>";
+        }
+        
+    }
+    return $pet_name;
+
+
     }
 
     
