@@ -23,6 +23,7 @@
     echo "</form>";
 
     $id_user = $_REQUEST['users'];
+    //if(isset($_POST["name"])){
     echo "The following data is by the form";
     echo "<br><br>";
     echo "User ID: $id_user <br>";
@@ -32,6 +33,7 @@
     echo "<p>The pets associated with this user are: </p>";
     echo "<br><br>";
     $pets->getAllPetAdoptionbyUserId($id_user);
+    //}
 
     ?>
     <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />

@@ -31,7 +31,7 @@
         <td> <input type="button" onclick="window.location.href='practice4AdoptionsInfo.php';" value="Search for adoptions" /></td>
 
 
-        <td><input type="button" onclick="window.location.href='practice1VerDatos.php';" value="Generate pdf" /></td>
+        <td><input type="button" onclick="window.location.href='practice4GeneratePDF.php';" value="Generate pdf" /></td>
     </tr>
     </table>
 
