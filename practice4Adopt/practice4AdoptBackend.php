@@ -9,14 +9,38 @@
 <body>
     <h1>Info about the adoption</h1>
     <?php
+        include "class/sql.php";
+        include "class/pets.php";
+        include "class/users.php";
+        include "class/usersAndPets.php";
         //$name = isset($_POST['name'])? $_POST['name']: "";
         //$pet_name = isset($_POST['pet_name'])? $_POST['pet_name']: "";
+        
 
-        $user_id = $_REQUEST['user_id'];
-        $pet_id = $_REQUEST['pets'];
-        echo "User ID: $user_id <br>";
-        echo "Pet ID : $pet_id <br>";
+        $id_user = $_REQUEST['users'];
+        $id_pet = $_REQUEST['pets'];
+        echo "The following data is by the form";
+        echo "<br><br>";
+        echo "User ID: $id_user <br>";
+        echo "Pet ID : $id_pet <br>";
+        echo "<br>";
+        $users = new users();
+        $usersAndPets = new usersAndPets();
+
+        $users -> searchUserById($id_user);
+        $oldNumber = $users -> getPetsNumber($id_user);
+        $pets_number= $oldNumber + 1;
+        echo "Now the number of pets of the user is: $pets_number";
+        echo "<br>";
+        $usersAndPets ->adoption($id_user,$id_pet,$pets_number);
+        echo "<br>";
+        echo "<br>";
+        $pets = new pets();
+        $pets -> searchPetById($id_pet);
+        echo "<br>";
+
     ?>
-     <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
+    <p>Congratulations, you have adopted  a new pet</p>
+    <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
 </body>
 </html>
