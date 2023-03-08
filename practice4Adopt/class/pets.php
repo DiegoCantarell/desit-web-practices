@@ -147,6 +147,46 @@ class pets{
         }
     }
 
+
+    public function getAllPetsAdopted(){
+      $sql = "SELECT * FROM `pets` where status = 0 ";
+      //echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+      
+      
+        if($this->result-> num_rows >0){
+
+          echo "<table class=\"table table-striped\">"; 
+
+            echo "<tr>";
+            echo "<th></th>";
+            echo "<th>id_pet</th>";
+            echo "<th></th>";
+            echo "<th>name</th>";
+            echo "<th></th>";
+            echo "<th>id_user_adopt</th>";
+            echo "<th></th>";
+            echo "<th>status</th>";
+            echo "<th></th>";
+            echo "</tr>";
+    
+            while($row = $this->result->fetch_assoc()){
+                echo "<tr>";
+                echo "<th></th>";
+                echo"<td>".$row["id_pet"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["name"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["id_user_adopt"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["status"]."</td>";
+                echo "<th></th>";
+                echo "</tr>";
+            }
+            echo "<table>";
+        }
+    }
+
     
       
 }
