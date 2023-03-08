@@ -15,6 +15,8 @@
         <th>Catalogue of users</th>
         <th>Add pet</th>
         <th>Add user</th>
+        <th>Adopt a pet</th>
+        <th>Search for adoptions</th>
         <th>Generate pdf</th>
     </tr>
     <tr>
@@ -30,8 +32,7 @@
 
         <td> <input type="button" onclick="window.location.href='practice4AdoptionsInfo.php';" value="Search for adoptions" /></td>
 
-
-        <td><input type="button" onclick="window.location.href='practice4GeneratePDF.php';" value="Generate pdf" /></td>
+        <td><input type="button" onclick="window.location.href='htmlPDF.php';" value="Generate pdf" /></td>
     </tr>
     </table>
 
