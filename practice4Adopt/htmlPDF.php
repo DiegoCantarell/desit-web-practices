@@ -41,6 +41,7 @@
             color: #24650b;
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
   
 <body>
