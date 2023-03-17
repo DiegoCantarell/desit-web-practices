@@ -1,0 +1,70 @@
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Style the h2 element */
+  h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #555555;
+    margin-top: 30px;
+  }
+  
+  /* Style the p element */
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #777777;
+    margin-top: 20px;
+  }
+  
+  /* Style the button element */
+  button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 40px;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  /* Style the button when hovered over */
+  button:hover {
+    background-color: #ff4757;
+  }
+  
+  /* Style the table element */
+  table {
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  /* Style the td element */
+  td {
+    padding: 10px;
+  }
+  
+  /* Style the body element */
+  body {
+    background: #f7f7f7 url('https://images.unsplash.com/photo-1560994201-2aa8c4fc9e2b') no-repeat center center fixed;
+    background-size: cover;
+  }
+  body {
+    background: #f7f7f7 url('https://imgs.search.brave.com/i66ZpgDgIT29L_N2-g8OncTDjIyD5qUcarOPzaLUwGU/rs:fit:1200:1077:1/g:ce/aHR0cHM6Ly93d3cu/Z2FubmV0dC1jZG4u/Y29tL3ByZXN0by8y/MDIwLzExLzI0L1BQ/SFgvOWU0OTA1MGEt/MDY2OC00M2MzLWFk/NzAtMjk5ZTlkYjU0/M2QxLXN1bmRhZTIu/anBnP2Nyb3A9MTkx/MywxMDc3LHgwLHky/ODcmd2lkdGg9MTkx/MyZoZWlnaHQ9MTA3/NyZmb3JtYXQ9cGpw/ZyZhdXRvPXdlYnA') no-repeat center center fixed;
+    background-size: cover;
+  }
+  img{
+    width: 50px;
+  }
