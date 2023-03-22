@@ -17,7 +17,7 @@
   <div  id="menu">
     <ul>
       <li ><a href="index.php">Home</a></li>
-      <li><a href="#">Catalogue of pets</a></li>
+      <li><a href="practice5ViewPets.php">Catalogue of pets</a></li>
       <li id="current" class="last"><a href="practice5LogIn.php">Log in</a></li>
       <li class="last"><a href="practice5SignUp.php">Sign up</a></li>
     </ul>
