@@ -16,15 +16,10 @@
   </div>
   <div  id="menu">
     <ul>
-      <li id="current"><a href="#">Home</a></li>
+      <li id="current"><a href="index.php">Home</a></li>
       <li><a href="#">Catalogue of pets</a></li>
-      <li><a href="#">Catalogue of users</a></li>
-      <li><a href="#">Add Pet</a></li>
-      <li><a href="#">Add User</a></li>
-      <li><a href="#">Adopt a Pet!</a></li>
-      <li><a href="#">Search for adoptions</a></li>
-      <li><a href="#">Generate PDF</a></li>
-      <li class="last"><a href="#">About</a></li>
+      <li class="last"><a href="practice5LogIn.php">Log in</a></li>
+      <li class="last"><a href="practice5SignUp.php">Sign up</a></li>
     </ul>
   </div>
   <div id="content-wrap">
@@ -77,7 +72,7 @@
     </div>
     <div id="main"> <a name="TemplateInfo"></a>
       <h1>About</h1>
-      <p><strong>Adopt a Pet </strong> is a free, Use the nationwide database of dogs looking for good homes below! Search by zip code to meet available dogs 
+      <p><strong>Adopt a Pet </strong> is free, Use the nationwide database of dogs looking for good homes below! Search by zip code to meet available dogs 
       in your area. Please note, these dogs are from rescues and shelters nationwide and are not available through the ASPCA. If you live in New York City and 
       are hoping to adopt from us, check out the dogs available at our Adoption Center. <strong>
       
