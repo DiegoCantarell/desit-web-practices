@@ -8,10 +8,10 @@
 <body>
 <div id="wrap">
   <div id="header">
-    <h1 id="logo-text">See all the Pets info and their status!</h1>
+    <h1 id="logo-text">See Pets info </h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-      <p> <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">Site Map</a> </p>
+    <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
     </div>
   </div>
   <div  id="menu">
@@ -32,7 +32,7 @@
     </div>
     <div id="main"> <a name="TemplateInfo"></a>
         <h1>Pets info</h1>
-        <h1>View all the pets info</h1>
+        
     <?php
     include "class/sql.php";
     include "class/pets.php";

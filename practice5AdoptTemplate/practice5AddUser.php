@@ -13,7 +13,7 @@
         <br><br>
         <input type = "submit" name = "send" value = "Accept">
         
-</form>
+    </form>
     <?php
         include "class/sql.php";
         include "class/users.php";

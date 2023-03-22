@@ -3,6 +3,7 @@ create database adoptions;
 CREATE TABLE users(
   id_user INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(128) NOT NULL,
+  password VARCHAR(128) NOT NULL,
   pets_number INT NOT NULL
   
   
@@ -16,7 +17,13 @@ CREATE TABLE pets(
     
 );
 
-//Insert partidos
+CREATE TABLE admin(
+  id_user INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  password VARCHAR(128) NOT NULL,
+  name VARCHAR(128) NOT NULL, 
+);
 
-insert into users VALUES(null,"Diego",0);
+
+insert into users VALUES(null,"Diego","123",0);
 insert into pets VALUES(null,"max",1,0);
+insert into admin VALUES(null,123,"cristiano");

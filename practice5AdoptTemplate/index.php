@@ -5,13 +5,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="images/Envision.css" type="text/css" />
 </head>
+
+  
+  <!--<input type="button" onclick="window.location.href='salir.php';" value="Salir" />-->
+
+
+
+<
 <body>
 <div id="wrap">
   <div id="header">
-    <h1 id="logo-text">Adopt a Pet by Diego Cantarell</h1>
+    <h1 id="logo-text">Adopt a Pet </h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-      <p> <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">Site Map</a> </p>
+      <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
     </div>
   </div>
   <div  id="menu">
@@ -148,4 +155,7 @@
   </div>
 </div>
 </body>
+
+      
+
 </html>

@@ -11,7 +11,7 @@
     <h1 id="logo-text">Log in</h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-      <p> <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">Site Map</a> </p>
+    <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
     </div>
   </div>
   <div  id="menu">
@@ -27,15 +27,18 @@
     <div id="main"> <a name="TemplateInfo"></a>
  
       <h3>Ingresar al sistema</h3>
-      <form action="#">
-        <p>
-          <label>User ID </label>
-          <input name="dId" value="ID" type="number" size="30" />
-          <label>Password</label>
-          <input name="dPassword" value="Password" type="text" size="30" />
-          
-        </p>
-      </form>
+
+      <form action = "main.php" method = "POST">
+      Type your name:
+        <input type = "text" name = "name" required>
+        <br><br>
+        Type your password:
+        <input type = "password" name = "password" required>
+        <br><br>
+        <input type = "submit" name = "send" value = "Accept">
+        
+        
+    </form>
       <br />
     </div>
   </div>

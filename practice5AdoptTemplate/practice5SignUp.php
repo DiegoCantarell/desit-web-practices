@@ -11,7 +11,7 @@
     <h1 id="logo-text">Sign up</h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-      <p> <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">Site Map</a> </p>
+      <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
     </div>
   </div>
   <div  id="menu">
@@ -26,16 +26,43 @@
     
     <div id="main"> <a name="TemplateInfo"></a>
  
-      <h3>Ingresar al sistema</h3>
-      <form action="#">
-        <p>
-          <label>User ID </label>
-          <input name="dId" value="ID" type="number" size="30" />
-          <label>Password</label>
-          <input name="dPassword" value="Password" type="text" size="30" />
-          
-        </p>
+      <h3>Type your info</h3>
+      <form action = "practice5SignUp.php" method = "POST">
+        Type your name:
+        <input type = "text" name = "name" required>
+        <br><br>
+        Type your password:
+        <input type = "password" name = "password" required>
+        <br><br>
+        <input type = "submit" name = "send" value = "Accept">
+        
       </form>
+      <?php
+        include "class/sql.php";
+        include "class/users.php";
+
+        if(isset($_POST["name"]) && isset($_POST["password"])){
+            $name = isset($_POST["name"])? $_POST["name"]: "";
+            $password = isset($_POST["password"])? $_POST["password"]: "";
+        
+            echo "<strong>Información ingresada a la BD</strong><br><br>";
+            echo"Usuario: ".($name)."<br>";
+            
+            echo "<br>";
+        
+            $users = new users();
+            $num = 0;
+            $users->addUser(null, $name,$password, $num );
+            $numPets = $users->getPetsNumber($name);
+            echo "<br>";
+            echo "El nuevo usuario se llama: $name ";
+            //$partidos -> updateNumeroVotos($numeroNew,$partido);
+            echo "<br>";
+            echo "La información se cargó correctamente a la BD";
+            echo "<br>";
+        }
+       
+    ?>
       <br />
     </div>
   </div>
@@ -45,3 +72,4 @@
 </div>
 </body>
 </html>
+
