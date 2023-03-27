@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo "You are on a view";
+echo "You are on ViewPets";
 $name = $_SESSION['name'];
 $password = $_SESSION['password'];
 $name2 = 'diego';
@@ -20,7 +20,9 @@ echo '<br>';
 <body>
 <div id="wrap">
   <div id="header">
-    <h1 id="logo-text">Log in</h1>
+  <?php
+    echo "<h1 id='logo-text'>View your pets info $name</h1>";
+    ?>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
     <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
@@ -28,30 +30,31 @@ echo '<br>';
   </div>
   <div  id="menu">
     <ul>
-      <li ><a href="index.php">Home</a></li>
-      <li><a href="practice5ViewPets.php">Catalogue of pets</a></li>
-      <li id="current" class="last"><a href="practice5LogIn.php">Log in</a></li>
-      <li class="last"><a href="practice5SignUp.php">Sign up</a></li>
+    <li ><a href="indexUser.php">Home</a></li>
+      <li id="current"><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
+      <li><a href="practice5ViewYourPetsUser.php">View your Pets</a></li>
+      <li><a href="practice5ViewPets.php">Adopt a Pet</a></li>
     </ul>
   </div>
   <div id="content-wrap">
-    
+    <div id="sidebar">
+      
+      <h1>Support Styleshout</h1>
+      <div class="left-box">
+        <p>If you are interested in supporting my work and would like to contribute, you are welcome to make a small donation through the <a href="http://www.styleshout.com/">donate link</a> on my website - it will be a great help and will surely be appreciated.</p>
+      </div>
+    </div>
     <div id="main"> <a name="TemplateInfo"></a>
- 
-      <h3>Ingresar al sistema</h3>
-
-      <form action = "main.php" method = "POST">
-      Type your name:
-        <input type = "text" name = "name" required>
-        <br><br>
-        Type your password:
-        <input type = "password" name = "password" required>
-        <br><br>
-        <input type = "submit" name = "send" value = "Accept">
+        <h1>Pets info</h1>
         
+    <?php
+    include "class/sql.php";
+    include "class/pets.php";
+    $pets = new pets();
+    //$partidos = new partidos();
+    $pets->getAllPets();
+    ?>
         
-    </form>
-      <br />
     </div>
   </div>
   <div id="footer">
@@ -60,3 +63,15 @@ echo '<br>';
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

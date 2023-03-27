@@ -27,7 +27,7 @@ echo '<br>';
 <body>
 <div id="wrap">
   <div id="header">
-    <h1 id="logo-text">Adopt a Pet </h1>
+    <h1 id="logo-text">Adopt a Pet General Access</h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
       <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>

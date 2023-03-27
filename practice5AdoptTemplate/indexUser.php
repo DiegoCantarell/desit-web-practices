@@ -37,10 +37,10 @@ echo '<br>';
   </div>
   <div  id="menu">
     <ul>
-      <li id="current"><a href="index.php">Home</a></li>
+      <li id="current"><a href="indexUser.php">Home</a></li>
       <li><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
-      <li><a href="practice5ViewPets.php">View your Pets</a></li>
-      <li><a href="practice5ViewPets.php">Adopt a Pet</a></li>
+      <li><a href="practice5ViewYourPetsUser.php">View your Pets</a></li>
+      <li><a href="practice5Adopt.php">Adopt a Pet</a></li>
 
     </ul>
   </div>
@@ -166,7 +166,7 @@ echo '<br>';
     </div>
   </div>
   <div id="footer">
-    <p> &copy; 2006 <strong>Your Company</strong> | Design by: <a href="http://www.styleshout.com/">styleshout</a> | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Home</a>&nbsp;|&nbsp; <a href="#">Sitemap</a>&nbsp;|&nbsp; <a href="#">RSS Feed</a> </p>
+    <p> &copy; 2006 <strong>Your Company</strong> | Design by: <a href="http://www.styleshout.com/">styleshout</a> | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Home</a>&nbsp;|&nbsp; <a href="#">Sitemap</a>&nbsp;|&nbsp; <a href="salir.php">Salir</a> </p>
   </div>
 </div>
 </body>
