@@ -23,15 +23,15 @@ echo '<br>';
     <h1 id="logo-text">See Pets info </h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-    <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
+    <p> <p> <a href="#">Contact</a> | <a href="#">Admin</a> | <a href="salir.php">Salir</a> </p> </p>
     </div>
   </div>
   <div  id="menu">
     <ul>
-      <li ><a href="index.php">Home</a></li>
-      <li id="current"><a href="practice5ViewPets.php">Catalogue of pets</a></li>
-      <li class="last"><a href="practice5LogIn.php">Log in</a></li>
-      <li class="last"><a href="practice5SignUp.php">Sign up</a></li>
+      <li ><a href="indexUser.php">Home</a></li>
+      <li id="current"><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
+      <li><a href="practice5ViewPets.php">View your Pets</a></li>
+      <li><a href="practice5ViewPets.php">Adopt a Pet</a></li>
     </ul>
   </div>
   <div id="content-wrap">

@@ -26,4 +26,5 @@ CREATE TABLE admin(
 
 insert into users VALUES(null,"Diego","123",0);
 insert into pets VALUES(null,"max",1,0);
+insert into pets VALUES(null,"max",0,0);
 insert into admin VALUES(null,123,"cristiano");

@@ -1,7 +1,14 @@
 <?php
 session_start();
-$name = isset($_POST["name"])? $_POST["name"]: "";
-$password = isset($_POST["password"])? $_POST["password"]: "";
+echo "You are on indexUser";
+$name = $_SESSION['name'];
+$password = $_SESSION['password'];
+$name2 = 'diego';
+echo '<br>';
+echo $name;
+echo '<br>';
+echo $password;
+echo '<br>';
 ?>
 
 
@@ -31,9 +38,10 @@ $password = isset($_POST["password"])? $_POST["password"]: "";
   <div  id="menu">
     <ul>
       <li id="current"><a href="index.php">Home</a></li>
-      <li><a href="practice5ViewPets.php">Catalogue of pets</a></li>
-      <li class="last"><a href="practice5LogIn.php">Log in</a></li>
-      <li class="last"><a href="practice5SignUp.php">Sign up</a></li>
+      <li><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
+      <li><a href="practice5ViewPets.php">View your Pets</a></li>
+      <li><a href="practice5ViewPets.php">Adopt a Pet</a></li>
+
     </ul>
   </div>
   <div id="content-wrap">
@@ -166,3 +174,4 @@ $password = isset($_POST["password"])? $_POST["password"]: "";
       
 
 </html>
+      
