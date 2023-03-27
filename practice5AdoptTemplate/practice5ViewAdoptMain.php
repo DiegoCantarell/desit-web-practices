@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo "You are on ViewPets";
+echo "You are on a view";
 $name = $_SESSION['name'];
 $password = $_SESSION['password'];
 $name2 = 'diego';
@@ -21,7 +21,7 @@ echo '<br>';
 <div id="wrap">
   <div id="header">
   <?php
-    echo "<h1 id='logo-text'>View your pets info $name</h1>";
+    echo "<h1 id='logo-text'>Adopt a Pet $name!!!</h1>";
     ?>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
@@ -37,24 +37,30 @@ echo '<br>';
     </ul>
   </div>
   <div id="content-wrap">
-    <div id="sidebar">
-      
-      <h1>Support Styleshout</h1>
-      <div class="left-box">
-        <p>If you are interested in supporting my work and would like to contribute, you are welcome to make a small donation through the <a href="http://www.styleshout.com/">donate link</a> on my website - it will be a great help and will surely be appreciated.</p>
-      </div>
-    </div>
+    
     <div id="main"> <a name="TemplateInfo"></a>
-        <h1>Pets info</h1>
-        
+ 
+     
+      <h1>Welcome to the adoption section</h1>
+    <p>The user only can adopt 2 pets</p>
+
+    <p>The pets available are: </p>
     <?php
     include "class/sql.php";
     include "class/pets.php";
+    include "class/users.php";
+    echo "<form action='practice4AdoptBackend.php'>";
+    $users = new users();
+    $users->getUser($name);
     $pets = new pets();
-    //$partidos = new partidos();
-    $pets->getAllPets();
+    $pets->getAllPetNames();
+    echo "<br>";
+    echo "<input type='submit' value='Submit'>";
+    echo "</form>";
+    
     ?>
-        
+
+      <br />
     </div>
   </div>
   <div id="footer">
@@ -63,15 +69,3 @@ echo '<br>';
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

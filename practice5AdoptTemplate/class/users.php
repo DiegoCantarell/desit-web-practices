@@ -186,6 +186,41 @@ class users{
     return $numero;
   }
 
+  public function getUser($name){
+    
+    $sql = "SELECT * FROM `users` where name = '".$name."'";
+    $this->result= $this->sql->ejecutar($sql);
+    //echo "<form action='practice4AdoptBackend.php'>";
+      //echo "Type your user ID:";
+      //echo "<input type = 'number' name = 'user_id' required>";
+      echo "<br><br>";
+      //TEST
+      echo "<label for='users'>Choose a user: </label>";
+      echo "<select name = 'users' id='users' required>";
+      echo "<optgroup label='Available Users'>";
+      if($this->result-> num_rows >0){
+        while($row = $this->result->fetch_assoc()){
+           
+            $id_user = $row["id_user"];
+            $name = $row["name"];
+            $pets_number = $row["pets_number"];
+            
+            if($pets_number < 2)
+              echo "<option value= $id_user>$name</option>";               
+        }
+      }
+      
+      echo "</optgroup>";
+      echo "</select>";
+      //TEST
+
+      echo "<br>";
+      echo "<br>";
+      echo "<br>";
+      //echo "<input type='submit' value='Submit'>";
+      //echo "</form>";
+}
+
   public function getAllUserNames(){
     
       $sql = "SELECT * FROM `users` ";
