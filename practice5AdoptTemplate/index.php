@@ -30,7 +30,7 @@ echo '<br>';
     <h1 id="logo-text">Adopt a Pet General Access</h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-      <p> <a href="#">Contact</a> | <a href="#">Admin</a> </p>
+      <p> <a href="#">Contact</a> | <a href="practice5LoginAdmin.php">Admin</a> </p>
     </div>
   </div>
   <div  id="menu">

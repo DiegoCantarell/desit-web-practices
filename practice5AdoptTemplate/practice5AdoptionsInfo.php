@@ -1,3 +1,23 @@
+
+<?php
+session_start();
+
+$name = $_SESSION['name'];
+$password = $_SESSION['password'];
+$admin = $_SESSION['admin'];
+if ($admin == 1 ){
+  echo "You are on indexAdmin";
+
+  echo '<br>';
+  echo $name;
+  echo '<br>';
+  echo $password;
+  echo '<br>';
+}
+else{
+  header("Location: salir.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +34,7 @@
     include "class/pets.php";
     include "class/users.php";
     
-    echo "<form action='practice4AdoptionsInfo.php'>";
+    echo "<form action='practice5AdoptionsInfo.php'>";
     $users = new users();
     $pets = new pets();
     $users->getAllUserNamesNoRestriction();
@@ -37,6 +57,6 @@
     //}
 
     ?>
-    <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
+    <input type="button" onclick="window.location.href='indexAdmin.php';" value="Back to the Main Page" />
 </body>
 </html>

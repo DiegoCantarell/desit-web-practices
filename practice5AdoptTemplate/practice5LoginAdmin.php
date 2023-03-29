@@ -20,7 +20,7 @@ echo '<br>';
 <body>
 <div id="wrap">
   <div id="header">
-    <h1 id="logo-text">Log in</h1>
+    <h1 id="logo-text">Log in Admin</h1>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
     <p> <a href="#">Contact</a> | <a href="practice5LoginAdmin.php">Admin</a> </p>
@@ -40,7 +40,7 @@ echo '<br>';
  
       <h3>Ingresar al sistema</h3>
 
-      <form action = "main.php" method = "POST">
+      <form action = "mainAdmin.php" method = "POST">
       Type your name:
         <input type = "text" name = "name" required>
         <br><br>

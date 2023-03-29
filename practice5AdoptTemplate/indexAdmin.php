@@ -1,20 +1,26 @@
 <?php
 session_start();
-echo "You are on indexUser";
+
 $name = $_SESSION['name'];
 $password = $_SESSION['password'];
-echo '<br>';
-echo $name;
-echo '<br>';
-echo $password;
-echo '<br>';
+$admin = $_SESSION['admin'];
+if ($admin == 1 ){
+  echo "You are on indexAdmin";
 
-include "class/sql.php";
-include "class/pets.php";
-include "class/users.php";
-include "class/usersAndPets.php";
-$users = new users();
-$id_user = $users->getUserID($name);
+  echo '<br>';
+  echo $name;
+  echo '<br>';
+  echo $password;
+  echo '<br>';
+}
+else{
+  header("Location: salir.php");
+}
+
+
+
+
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -33,7 +39,7 @@ $id_user = $users->getUserID($name);
 <div id="wrap">
   <div id="header">
     <?php
-    echo "<h1 id='logo-text'>Adopt a Pet User $name</h1>";
+    echo "<h1 id='logo-text'>Adopt a Pet Admin $name </h1>";
     ?>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
@@ -42,10 +48,14 @@ $id_user = $users->getUserID($name);
   </div>
   <div  id="menu">
     <ul>
-    <li ><a href="indexUser.php">Home</a></li>
-      <li id="current"><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
-      <li><a href="practice5ViewYourPetsUser.php">View your Pets</a></li>
-      <li><a href="practice5ViewAdoptMain.php">Adopt a Pet</a></li>
+    <li ><a href="indexAdmin.php">Home</a></li>
+      
+      <li><a href="practice5AddPet.php">Add Pet</a></li>
+      <li><a href="practice5AddUser.php">Add User</a></li>
+      <li><a href="htmlPDF.php">Generate PDF</a></li>
+      <li id="current"><a href="practice5ViewPetsAdmin.php">Catalogue of pets</a></li>
+      <li><a href="practice5ViewUsers.php">Catalogue Users</a></li>
+      <li><a href="practice5AdoptionsInfo.php">Search for Adoptions</a></li>
 
     </ul>
   </div>

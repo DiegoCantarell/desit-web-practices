@@ -27,7 +27,7 @@ echo '<br>';
     ?>
     <h2 id="slogan">Adopt a pet can change your life and a pet life...</h2>
     <div id="header-links">
-    <p> <p> <a href="#">Contact</a> | <a href="#">Admin</a> | <a href="salir.php">Salir</a> </p> </p>
+    <p> <p> <a href="#">Contact</a> | <a href="practice5LoginAdmin.php">Admin</a> | <a href="salir.php">Salir</a> </p> </p>
     </div>
   </div>
   <div  id="menu">

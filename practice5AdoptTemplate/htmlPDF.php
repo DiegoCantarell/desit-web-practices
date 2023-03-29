@@ -1,3 +1,24 @@
+
+<?php
+session_start();
+
+$name = $_SESSION['name'];
+$password = $_SESSION['password'];
+$admin = $_SESSION['admin'];
+if ($admin == 1 ){
+  echo "You are on indexAdmin";
+
+  echo '<br>';
+  echo $name;
+  echo '<br>';
+  echo $password;
+  echo '<br>';
+}
+else{
+  header("Location: salir.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -60,7 +81,7 @@
             ?>
         </div>
     </div>
-    <input type="button" onclick="window.location.href='practice4MainPage.php';" value="Back to the Main Page" />
+    <input type="button" onclick="window.location.href='indexAdmin.php';" value="Back to the Main Page" />
 </body>
   
 <script>
