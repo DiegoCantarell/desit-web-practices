@@ -1,14 +1,25 @@
 <?php
 session_start();
-echo "You are on ViewPets";
+
 $name = $_SESSION['name'];
 $password = $_SESSION['password'];
-$name2 = 'diego';
-echo '<br>';
-echo $name;
-echo '<br>';
-echo $password;
-echo '<br>';
+$user = $_SESSION['user'];
+if ($user == 2 ){
+  echo "You are on indexUser";
+
+  echo '<br>';
+  echo $name;
+  echo '<br>';
+  echo $password;
+  echo '<br>';
+}
+else{
+  header("Location: salir.php");
+}
+
+
+
+
 
 ?>
 

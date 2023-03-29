@@ -1,14 +1,26 @@
 <?php
 session_start();
-echo "You are on a view";
+
 $name = $_SESSION['name'];
 $password = $_SESSION['password'];
-$name2 = 'diego';
-echo '<br>';
-echo $name;
-echo '<br>';
-echo $password;
-echo '<br>';
+$user = $_SESSION['user'];
+if ($user != 2  || !$admin != 1 ){
+  echo "You are on indexUser";
+
+  echo '<br>';
+  echo $name;
+  echo '<br>';
+  echo $password;
+  echo '<br>';
+}
+else{
+  header("Location: salir.php");
+}
+
+
+
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

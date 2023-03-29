@@ -1,17 +1,35 @@
 <?php
+include "class/sql.php";
+include "class/users.php";
   session_start();
   if(isset($_POST['name']) && isset($_POST['password'])){
     $name = isset($_POST["name"])? $_POST["name"]: "";
     $password = isset($_POST["password"])? $_POST["password"]: "";
+    $user = 2;
     $_SESSION['name'] = $name;
     $_SESSION['password'] = $password;
+    $_SESSION['user'] = $user;
+
+    $users = new users();
+    /*        
+    $nameOriginal = $users->getUserName($name);
+    $passwordOriginal = $users->getUserPassword($name);
+    echo  "Name = $nameOriginal";
+    echo  "pass = $passwordOriginal";
   
     //echo"Usuario: ".($name1)."<br>";
     //echo $password1;
     
     //echo "<br>";
+    if( $nameOriginal == $name && $passwordOriginal == $password){
+      header("Location: indexUser.php");
+    }
+    else{
+      header("Location: index.php");
+    }
+    */
     header("Location: indexUser.php");
-
+    
     
   } else {
     //echo "No hay sesi'on";

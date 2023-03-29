@@ -67,6 +67,39 @@ class users{
         return $id;
     }
 
+    public function getUserName($name){
+      $sql = "SELECT * FROM `users` where name = '".$name."'";
+      //echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+      
+      
+        if($this->result-> num_rows >0){
+
+          
+            while($row = $this->result->fetch_assoc()){
+                echo $row["name"];
+                $name =  $row["name"];
+            }
+        }
+        return $name;
+    }
+
+    public function getUserPassword($name){
+      $sql = "SELECT * FROM `users` where name = '".$name."'";
+      //echo $sql;
+      $this->result= $this->sql->ejecutar($sql);
+      
+      
+        if($this->result-> num_rows >0){
+
+          
+            while($row = $this->result->fetch_assoc()){
+                echo $row["password"];
+                $password =  $row["password"];
+            }
+        }
+        return $password;
+    }
     public function getAllUserInfobyId($id_user){
       $sql = "SELECT * FROM `users` where id_user = '".$id_user."'";
       //echo $sql;

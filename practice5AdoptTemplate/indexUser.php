@@ -1,21 +1,28 @@
 <?php
 session_start();
-echo "You are on indexUser";
+
 $name = $_SESSION['name'];
 $password = $_SESSION['password'];
-echo '<br>';
-echo $name;
-echo '<br>';
-echo $password;
-echo '<br>';
+$user = $_SESSION['user'];
+if ($user == 2 ){
+  echo "You are on indexUser";
 
-include "class/sql.php";
-include "class/pets.php";
-include "class/users.php";
-include "class/usersAndPets.php";
-$users = new users();
-$id_user = $users->getUserID($name);
+  echo '<br>';
+  echo $name;
+  echo '<br>';
+  echo $password;
+  echo '<br>';
+}
+else{
+  header("Location: salir.php");
+}
+
+
+
+
+
 ?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
