@@ -1,4 +1,6 @@
 <?php
+include "class/sql.php";
+include "class/admin.php";
   session_start();
   if(isset($_POST['name']) && isset($_POST['password'])){
     $name = isset($_POST["name"])? $_POST["name"]: "";
@@ -12,7 +14,28 @@
     //echo $password1;
     
     //echo "<br>";
-    header("Location: indexAdmin.php");
+    $admin = new admin();
+         
+    $nameOriginal = strtolower($admin->getUserName($name));
+    $passwordOriginal = $admin->getUserPassword($name);
+    $name = strtolower($name);
+    echo  "Name = $nameOriginal<br>";
+    echo  "pass = $passwordOriginal<br>";
+  
+    echo"Usuario: ".($name)."<br>";
+    echo $password;
+    
+    //echo "<br>";
+   if( $nameOriginal == $name && $passwordOriginal == $password){
+      header("Location: indexAdmin.php");
+      echo "si";
+    }
+    else{
+      header("Location: index.php");
+      echo "no";
+    }
+       // header("Location: indexUser.php");
+    
 
     
   } else {

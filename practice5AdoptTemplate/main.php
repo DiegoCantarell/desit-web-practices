@@ -11,24 +11,25 @@ include "class/users.php";
     $_SESSION['user'] = $user;
 
     $users = new users();
-    /*        
-    $nameOriginal = $users->getUserName($name);
+         
+    $nameOriginal = strtolower($users->getUserName($name));
     $passwordOriginal = $users->getUserPassword($name);
-    echo  "Name = $nameOriginal";
-    echo  "pass = $passwordOriginal";
+    echo  "Name = $nameOriginal<br>";
+    echo  "pass = $passwordOriginal<br>";
   
-    //echo"Usuario: ".($name1)."<br>";
-    //echo $password1;
+    echo"Usuario: ".($name)."<br>";
+    echo $password;
     
     //echo "<br>";
-    if( $nameOriginal == $name && $passwordOriginal == $password){
+   if( $nameOriginal == $name && $passwordOriginal == $password){
       header("Location: indexUser.php");
+      //echo "si";
     }
     else{
       header("Location: index.php");
+      //echo "no";
     }
-    */
-    header("Location: indexUser.php");
+       // header("Location: indexUser.php");
     
     
   } else {
