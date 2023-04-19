@@ -43,9 +43,9 @@ else{
   <div  id="menu">
     <ul>
     <li ><a href="indexUser.php">Home</a></li>
-      <li id="current"><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
+      <li ><a href="practice5ViewPetsUser.php">Catalogue of pets</a></li>
       <li><a href="practice5ViewYourPetsUser.php">View your Pets</a></li>
-      <li><a href="practice5ViewAdoptMain.php">Adopt a Pet</a></li>
+      <li id="current"><a href="practice5ViewAdoptMain.php">Adopt a Pet</a></li>
     </ul>
   </div>
   <div id="content-wrap">
