@@ -50,12 +50,22 @@ else{
     <ul>
     <li ><a href="indexAdmin.php">Home</a></li>
       
-      <li><a href="practice5AddPet.php">Add Pet</a></li>
-      <li><a href="practice5AddUser.php">Add User</a></li>
+
       <li><a href="htmlPDF.php">Generate PDF</a></li>
       <li id="current"><a href="practice5ViewPetsAdmin.php">Catalogue of pets</a></li>
       <li><a href="practice5ViewUsers.php">Catalogue Users</a></li>
       <li><a href="practice5AdoptionsInfo.php">Search for Adoptions</a></li>
+
+    </ul>
+  </div>
+  <div  id="menu">
+    <ul>
+      <li><a href="practice5AddPet.php">Add Pet</a></li>
+      <li><a href="practice5AddUser.php">Add User</a></li>
+      <li><a href="practice5DeletePet.php">Delete Pet</a></li>
+      <li><a href="practice5DeleteUser.php">Delete User</a></li>
+      <li><a href="practice5ModifyPet.php">Modify Pet</a></li>
+      <li><a href="practice5ModifyUser.php">Modify User</a></li>
 
     </ul>
   </div>
