@@ -287,6 +287,24 @@ class users{
 
 
   }
+
+
+  public function deleteUser( $id_user){
+    $sql = "delete from users where id_user='". $id_user."' ";
+    $this->result= $this->sql->ejecutar($sql);
+    //echo $sql;
+    //De esta manera puedo combinar los métodos sin perder la funcionalidad
+    
+
+  }
+  public function modifyUser($id_user,$name,$password){
+    //Query para hacer la actualización de contacto
+    //$sql = "update contacto set nom = '".$nom."',";
+    $sql = "update users set name='".$name."',password='".$password."' where id_user = '".$id_user."'";
+    $this->result= $this->sql->ejecutar($sql);
+    //echo $sql;
+  }
+
     
 
 
