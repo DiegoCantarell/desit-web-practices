@@ -225,6 +225,59 @@ class pets{
         }
     }
 
+
+    public function getAllPetNamesNoRestriction(){
+    
+      $sql = "SELECT * FROM `pets` ";
+      $this->result= $this->sql->ejecutar($sql);
+      //echo "<form action='practice4AdoptBackend.php'>";
+        //echo "Type your user ID:";
+        //echo "<input type = 'number' name = 'user_id' required>";
+        echo "<br><br>";
+        //TEST
+        echo "<label for='pets'>Choose a Pet: </label>";
+        echo "<select name = 'pets' id='pets' required>";
+        echo "<optgroup label='All pets'>";
+        if($this->result-> num_rows >0){
+          while($row = $this->result->fetch_assoc()){
+             
+              $id_pet = $row["id_pet"];
+              $name = $row["name"];
+             
+              
+              
+              echo "<option value= $id_pet>$name</option>";               
+          }
+        }
+        
+        echo "</optgroup>";
+        echo "</select>";
+        //TEST
+  
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        //echo "<input type='submit' value='Submit'>";
+        //echo "</form>";
+  }
+
+  public function deletePet($id_pet){
+    $sql = "delete from pets where id_pet='". $id_pet."' ";
+    $this->result= $this->sql->ejecutar($sql);
+    //echo $sql;
+    //De esta manera puedo combinar los métodos sin perder la funcionalidad
+    
+
+  }
+  public function modifyPet($id_pet,$name){
+    //Query para hacer la actualización de contacto
+    //$sql = "update contacto set nom = '".$nom."',";
+    $sql = "update pets set name='".$name."' where id_pet = '".$id_pet."'";
+    $this->result= $this->sql->ejecutar($sql);
+    //echo $sql;
+  }
+
+
     
       
 }
