@@ -305,6 +305,59 @@ class users{
     //echo $sql;
   }
 
+  public function showUsers(){
+    $sql = "SELECT * FROM `users`";
+    $this->result= $this->sql->ejecutar($sql);
+
+    if($this->result-> num_rows >0){
+        echo "<table class=\"table table-striped\">";
+        echo "<tr>";
+        
+        echo "<th>ID</th>";
+        echo "<th>Name</th>";
+        echo "<th>Password</th>";
+        echo "<th>Actualizar</th>";
+        
+        echo "<th>Eliminar</th>";
+        echo "<th>Insertar</th>";
+        
+        echo "<th></th>";
+        echo "</tr>";
+
+        while($row = $this->result->fetch_assoc()){
+            echo "<tr>";
+            echo "<form action='mainTableBackend.php' method = 'POST'> ";
+            
+              echo"<td>".$row["id_user"]."</td>";
+              
+              echo"<td><input type='text' id='fname' name='name' value=".$row["name"]."></td>";
+              #echo"<td>".$row["name"]."</td>";
+              echo"<td><input type='text' id='fname' name='password' value=".$row["password"]."></td>";
+              #echo"<td>".$row["password"]."</td>";
+              
+              echo "<input type='text' name='id_user' value=".$row["id_user"]." style='display:none;'>";
+              echo "<td><input type='submit' name = 'send' value='Submit'></td>";
+              #echo "<td><input type='submit' name = 'sendEliminar' value='Eliminar '></td>";
+            echo"</form>"; 
+            
+            //NO PODEMOS PONER EL ONCLICK() DEBIDO A QUE PODRIA AFECTAR EL HREF QUE TENEMOS
+            echo "<form action='mainTableBackendDelete.php' method = 'POST' >";
+            
+       
+                #echo"<td><a href=\"javascript:modificar1('".$row["id_user"]."')\" class='btn btn-primary' >Eliminar user con ID: '".$row["id_user"]."' </a></td>";
+                echo "<input type='text' name='id_user' value=".$row["id_user"]." style='display:none;'>";
+                #echo "<td><input type='submit' name = 'submit' value='Eliminar' onClick='alert();'></td>";
+                echo "<td><input type='submit' name = 'submit' value='Eliminar' onClick='return confirm();'></td>";
+            echo"</form>"; 
+
+            echo"<td><a href='mainTableAddUser.php' class='btn btn-primary' >Modificar</a></td>";
+            echo "</tr>";
+        }
+        echo "<table>";
+    }
+
+}
+
     
 
 
