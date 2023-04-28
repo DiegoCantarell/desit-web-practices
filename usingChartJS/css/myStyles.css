@@ -1,0 +1,118 @@
+/* Set a background color for the page */
+body {
+    background-color: #f2f2f2;
+  }
+  
+  /* Set the font family and size for all text */
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Style the main content area */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the features section */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .features .feature {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #aaa;
+    text-align: center;
+  }
+  
+  .features .feature h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .features .feature p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  .myDiv {
+    width: 300px; /* set the width of the div */
+    margin: 0 auto; /* set the left and right margin to auto */
+  }
+  button {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    width: 200px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #FFFFFF;
+    color: #4CAF50;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    margin: 0 10px;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+  }
+  
