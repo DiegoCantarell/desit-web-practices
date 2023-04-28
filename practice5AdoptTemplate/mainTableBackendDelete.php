@@ -23,7 +23,7 @@
     echo "User ID: $id_user <br>";
     
 
-    //$users-> deleteUser( $id_user);
+    $users-> deleteUser( $id_user);
     echo "The user have been deleted sucessfully";
     ?>
     <input type="button" onclick="window.location.href='mainTable.php';" value="Back to the table />

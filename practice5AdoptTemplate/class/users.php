@@ -347,7 +347,7 @@ class users{
                 #echo"<td><a href=\"javascript:modificar1('".$row["id_user"]."')\" class='btn btn-primary' >Eliminar user con ID: '".$row["id_user"]."' </a></td>";
                 echo "<input type='text' name='id_user' value=".$row["id_user"]." style='display:none;'>";
                 #echo "<td><input type='submit' name = 'submit' value='Eliminar' onClick='alert();'></td>";
-                echo "<td><input type='submit' name = 'submit' value='Eliminar' onClick='return confirm();'></td>";
+                echo "<td><input type='submit' name = 'submit' value='Eliminar' ></td>";
             echo"</form>"; 
 
             echo"<td><a href='mainTableAddUser.php' class='btn btn-primary' >Modificar</a></td>";
