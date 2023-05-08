@@ -1,2 +1,0 @@
-# BOOK LENDING SYSTEM
-## Final Project WEB
