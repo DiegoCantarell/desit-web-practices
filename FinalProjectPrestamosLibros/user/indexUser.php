@@ -97,21 +97,24 @@ else{
                     <a href="aboutUser.php" class="nav-item nav-link">About</a>
                     <a href="booksUser.php" class="nav-item nav-link">Books</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Options</a>
                         <div class="dropdown-menu m-0">
-                            <a href="detail.html" class="dropdown-item">Course Detail</a>
-                            <a href="feature.html" class="dropdown-item">Our Features</a>
-                            <a href="team.html" class="dropdown-item">Instructors</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="profileActionUser.php" class="dropdown-item">See my Profile</a>
+                            <a href="editActionUser.php" class="dropdown-item">Edit my Profile</a>
+                            <a href="borrowActionUser.php" class="dropdown-item">Borrow a Book</a>
+                            <a href="removeActionUser.php" class="dropdown-item">Remove a Book</a>
+                            <a href="rateActionUser.php" class="dropdown-item">Rate User</a>
+                            <a href="messageActionUser.php" class="dropdown-item">Send Message to User</a>
                         </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div> 
+                    
                 </div>          
-                    <a href="../salir.php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Exit</a>   
+                    <?php
+                    echo " <h2 class='m-0 text-uppercase text-primary'><i class='fa fa-book-reader mr-3'></i>Hi $name!</h2>";
+                    ?>
             </div>
-            <?php
-                echo " <h2 class='m-0 text-uppercase text-primary'><i class='fa fa-book-reader mr-3'></i>Hi $name!</h2>";
-            ?>
+
+                <a href="../salir.php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Exit</a>   
         </nav>
     </div>
     <!-- Navbar End -->
