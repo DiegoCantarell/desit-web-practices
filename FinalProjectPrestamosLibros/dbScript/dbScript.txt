@@ -15,3 +15,14 @@ CREATE TABLE books(
 
 INSERT INTO books values(null,"VHDL","BUAP","Tech",TRUE,"16/09/2006","max1",null,null,null);
 INSERT INTO books values(null,"C++","BUAP","Tech",TRUE,"16/09/2006","max1",null,null,null);
+
+CREATE TABLE users(
+    id_user INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    email VARCHAR(128) NOT NULL,
+    password VARCHAR(128) NOT NULL,
+    cellphone VARCHAR(128) NOT NULL,
+    registration_date VARCHAR(128) NOT NULL
+);
+
+INSERT INTO users values(null,"Max Verstappen ","max@redbull.com","123","9511111111","29/06/2023");
