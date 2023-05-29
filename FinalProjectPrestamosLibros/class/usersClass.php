@@ -37,7 +37,7 @@ class users{
               while($row = $this->result->fetch_assoc()){
                 echo "The name from the method is:" .$row['name']."<br>";
                 
-                $name =  $row["name"];
+                $name =  strtolower($row["name"]);
               }
           }
           return $name;
