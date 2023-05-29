@@ -92,9 +92,9 @@ else{
                 <div class="navbar-nav mx-auto py-0">
                     <a href="indexUser.php" class="nav-item nav-link ">Home</a>
                     <a href="aboutUser.php" class="nav-item nav-link">About</a>
-                    <a href="booksUser.php" class="nav-item nav-link active">Books</a>
+                    <a href="booksUser.php" class="nav-item nav-link ">Books</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Options</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Options</a>
                         <div class="dropdown-menu m-0">
                             <a href="profileActionUser.php" class="dropdown-item">See my Profile</a>
                             <a href="editActionUser.php" class="dropdown-item">Edit my Profile</a>
