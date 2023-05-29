@@ -99,6 +99,7 @@ else{
                         <div class="dropdown-menu m-0">
                             <a href="profileActionUser.php" class="dropdown-item">See my Profile</a>
                             <a href="editActionUser.php" class="dropdown-item">Edit my Profile</a>
+                            <a href="uploadActionUser.php" class="dropdown-item">Upload a Book</a>
                             <a href="borrowActionUser.php" class="dropdown-item">Borrow a Book</a>
                             <a href="removeActionUser.php" class="dropdown-item">Remove a Book</a>
                             <a href="rateActionUser.php" class="dropdown-item">Rate User</a>
