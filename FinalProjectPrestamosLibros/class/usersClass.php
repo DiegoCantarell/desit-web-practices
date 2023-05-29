@@ -9,6 +9,19 @@ class users{
     }
 
 
+    public function getUserId($name){
+        $sql = "SELECT * FROM `users` where name = '".$name."'";
+        //echo $sql;
+        $this->result= $this->sql->ejecutar($sql);
+          if($this->result-> num_rows >0){
+              while($row = $this->result->fetch_assoc()){
+                $id_user =  $row["id_user"];
+                //echo "<br>The id from the method is:" .$row['id_user']."<br>";
+              }
+          }
+          return $id_user;
+    }
+
 
     public function getUserName($name){
         $sql = "SELECT * FROM `users` where name = '".$name."'";
@@ -20,9 +33,10 @@ class users{
   
             
               while($row = $this->result->fetch_assoc()){
+                $name =  strtolower($row["name"]);
                 //echo "The name from the method is:" .$row['name']."<br>";
                 
-                $name =  strtolower($row["name"]);
+                
               }
           }
           return $name;
