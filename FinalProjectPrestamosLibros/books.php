@@ -95,7 +95,13 @@
     <!-- Navbar End -->
 
 
-
+    <?php
+    include "class/sql.php";
+    include "class/booksClass.php";
+    $books = new books();
+    //$partidos = new partidos();
+    $books->getTableBooks();
+    ?>
 
   
 
