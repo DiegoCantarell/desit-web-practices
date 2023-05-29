@@ -1,0 +1,17 @@
+create database borrow_books;
+
+CREATE TABLE books(
+    id_book INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(128) NOT NULL,
+    editorial VARCHAR(128) NOT NULL,
+    subject VARCHAR(128) NOT NULL,
+    availability boolean NOT NULL,
+    release_date VARCHAR(128) NOT NULL,
+    owner VARCHAR(128) NOT NULL,
+    borrower VARCHAR(128),
+    borrow_start_date VARCHAR(128) ,
+    borrow_end_date VARCHAR(128) 
+);
+
+INSERT INTO books values(null,"VHDL","BUAP","Tech",TRUE,"16/09/2006","max1",null,null,null);
+INSERT INTO books values(null,"C++","BUAP","Tech",TRUE,"16/09/2006","max1",null,null,null);
