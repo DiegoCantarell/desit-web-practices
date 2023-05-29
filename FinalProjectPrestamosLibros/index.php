@@ -73,7 +73,7 @@
                 <div class="navbar-nav mx-auto py-0">
                     <a href="index.php" class="nav-item nav-link active">Home</a>
                     <a href="about.php" class="nav-item nav-link">About</a>
-                    <a href="course.html" class="nav-item nav-link">Books</a>
+                    <a href="books.php" class="nav-item nav-link">Books</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
@@ -85,9 +85,9 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
+                <a href="join.php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
 
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Login</a>
+                <a href="login.php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Login</a>
                 
             </div>
         </nav>
