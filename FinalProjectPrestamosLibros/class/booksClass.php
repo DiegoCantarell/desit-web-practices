@@ -133,6 +133,17 @@ class books{
         }
       return $title;
     }
+
+
+    public function addBook( $id_book, $title, $editorial,$subject,$availability, $release_date,$owner,$borrower,$borrow_start_date,$borrow_end_date){
+        //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
+  
+        //le mandamos la consulta por paso de parametros
+        $sql = "insert into books values(null,'". $title."', '". $editorial."', '". $subject."', '". $availability."', '". $release_date."', '". $owner."', null,null,null)";
+        echo $sql;
+        $this->result= $this->sql->ejecutar($sql);
+  
+      }
     
 
 
