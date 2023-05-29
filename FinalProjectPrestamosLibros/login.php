@@ -98,7 +98,7 @@
     <!--Form Start-->
     <div class="container">
             <h1>LOGIN</h1>
-            <form action = "login.php" method = "POST">
+            <form action = "controller.php" method = "POST">
             Type your name:
                 <input type = "text" name = "name" required>
                 <br><br>
