@@ -95,7 +95,22 @@
     <!-- Navbar End -->
 
 
-
+    <!--Form Start-->
+    <div class="container">
+            <form action = "login.php" method = "POST">
+            Type your name:
+                <input type = "text" name = "name" required>
+                <br><br>
+                Type your password:
+                <input type = "password" name = "password" required>
+                <br><br>
+                <input type = "submit" name = "send" value = "Accept">
+                
+                
+        </form>
+    </div>
+    
+    <!--Form End-->
 
   
 
