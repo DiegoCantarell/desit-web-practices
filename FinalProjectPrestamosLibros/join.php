@@ -23,6 +23,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/myStyle.css" rel="stylesheet">
     
 </head>
 
@@ -95,8 +96,10 @@
     </div>
     <!-- Navbar End -->
 
+    
     <!--Form Start-->
     <div class="container">
+        <h1>JOIN US</h1>
         <form action = "join.php" method = "POST">
         Type your name:
             <input type = "text" name = "name" required>
