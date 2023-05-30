@@ -1,0 +1,117 @@
+• Agregar carpeta css y js.
+
+• Agregar bootstrap a la pestaña de peliculas.
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+• En la pestaña de Peliculas agregar el modal. 
+
+<div id="modalActualizar" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Actualizar Película.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      
+                </div>
+                <div id="modal-text" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="guardar()">Guardar Cambios</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+• Agregar Scripts de bootstraps y jquery.
+
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+
+• Agregar un botón o un a href.
+
+<td> <button onclick='actualizar($id)' ><img src='img/actualizar.jpg' style='max-width: 40px; height=40px;'></img></button> </td>
+<td onclick='actualizar($id)'> <a href=''><img src='img/actualizar.jpg' style='max-width: 40px; height=40px;'></img></a> </td>
+
+• Agregar a la carpeta el documento: mostrar.php
+
+
+• Agregar el script con los métodos para abrir, cerrar y modificar el Modal.
+
+<script>
+    
+        
+  function load(){
+    location.href ="peliculas.php";
+  }
+
+
+  function actualizar(id){
+    var url="mostrar.php?id="+id+"&tipo=1";
+    $.get(url,function(result){
+      $("#modal-text").html(result);
+    });
+    $("#modalActualizar").modal("show");
+
+  }
+
+  function guardar(){
+
+    var id = $("#id").val();
+    var titulo = $("#titulo").val();
+    var director = $("#director").val();
+    var actor = $("#actor").val();
+    var ranking = $("#ranking").val();
+    var foto = $("#foto").val();    
+
+    var error="";
+
+    if(titulo == ""){
+        error+="falta el título\n";
+    }
+    if(director == ""){
+        error+="falta el director\n";
+    }
+    if(actor == ""){
+        error+="falta el actor\n";
+    }
+    if(ranking == ""){
+        error+="falta el ranking\n";
+    }
+    if(foto == ""){
+        error+="falta la foto\n";
+    }    
+    if(error==""){
+      var formData= new FormData();
+
+        formData.append("tipo",2);
+        formData.append("id",id);
+        formData.append("titulo",titulo);
+        formData.append("director",director);
+        formData.append("actor",actor);
+        formData.append("ranking",ranking);
+        formData.append("foto",foto);
+                
+
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200 ){
+            //console.log(this.responseText);
+            //alert(this.responseText);
+            load();
+            $("#modalActualizar").modal("hide");
+          }
+        }
+        request.open("POST","mostrar.php");
+        request.send(formData);
+        alert("Listo");
+    }else{
+        alert(error);
+    }
+}
+</script>
