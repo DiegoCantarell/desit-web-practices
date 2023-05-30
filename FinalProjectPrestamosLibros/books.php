@@ -74,6 +74,7 @@
                     <a href="index.php" class="nav-item nav-link ">Home</a>
                     <a href="about.php" class="nav-item nav-link">About</a>
                     <a href="books.php" class="nav-item nav-link active">Books</a>
+                    <a href="barChart.php" class="nav-item nav-link">Our Users Points</a>
 
                     
                 </div>

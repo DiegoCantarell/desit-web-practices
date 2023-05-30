@@ -79,10 +79,11 @@ echo "The book name is: $title";
                 <div class="navbar-nav mx-auto py-0">
                     <a href="index.php" class="nav-item nav-link ">Home</a>
                     <a href="about.php" class="nav-item nav-link">About</a>
-                    <a href="books.php" class="nav-item nav-link active">Books</a>
+                    <a href="books.php" class="nav-item nav-link ">Books</a>
+                    <a href="barChart.php" class="nav-item nav-link">Our Users Points</a>
 
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    
                 </div>
                 <a href="join.php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
 

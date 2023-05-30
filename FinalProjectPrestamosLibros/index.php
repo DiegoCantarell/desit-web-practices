@@ -1,10 +1,3 @@
-<?php
-echo "default index <br>";
-$bookName = $_REQUEST['bookName'];
-
-echo "The book name is: $bookName";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
