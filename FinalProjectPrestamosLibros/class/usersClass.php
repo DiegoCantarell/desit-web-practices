@@ -208,6 +208,38 @@ class users{
     }
 
 
+    //Get a table with all the users except the actual user to rate the users
+    public function getAllUsernamesForBarChart($array){
+        $sql = "SELECT * FROM `users` ";
+        $this->result= $this->sql->ejecutar($sql);
+        //echo $sql;
+        echo "<br><br>";
+        if($this->result-> num_rows >0){
+            while($row = $this->result->fetch_assoc()){
+                //echo"<br>".$row["name"]."<br>";
+                $array[$i] = $row["name"];
+                $i=$i+1;
+            }   
+        }
+      return $array;
+    }
+
+    public function getAllUserPointsForBarChart($array){
+        $sql = "SELECT * FROM `users` ";
+        $this->result= $this->sql->ejecutar($sql);
+        //echo $sql;
+        echo "<br><br>";
+        if($this->result-> num_rows >0){
+            while($row = $this->result->fetch_assoc()){
+                //echo"<br>".$row["name"]."<br>";
+                $array[$i] = $row["points"];
+                $i=$i+1;
+            }   
+        }
+      return $array;
+    }
+
+
     public function updateUser($name,$email,$password,$cellphone){
         //Query para hacer la actualización de contacto
         //$sql = "update contacto set nom = '".$nom."',";
