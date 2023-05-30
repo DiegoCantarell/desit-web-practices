@@ -53,6 +53,9 @@
                     <a class="text-white pl-2" href="">
                         <i class="fab fa-youtube"></i>
                     </a>
+                    <a class="text-white px-2" href="loginAdmin.php"> 
+                        <button   class="btn px-4 px-lg-5" type = "submit" name = "send" >Admin</button>
+                    </a>
                 </div>
             </div>
         </div>
