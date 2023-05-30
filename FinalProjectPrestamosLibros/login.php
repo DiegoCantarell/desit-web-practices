@@ -23,6 +23,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/myStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -89,18 +90,21 @@
 
 
     <!--Form Start-->
-    <div class="container">
-            <h1>LOGIN</h1>
-            <form action = "controller.php" method = "POST">
-            Type your name:
-                <input type = "text" name = "name" required>
-                <br><br>
-                Type your password:
-                <input type = "password" name = "password" required>
-                <br><br>
-                <input type = "submit" name = "send" value = "Accept">
-                
-                
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action = "controller.php" method = "POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
         </form>
     </div>
     
