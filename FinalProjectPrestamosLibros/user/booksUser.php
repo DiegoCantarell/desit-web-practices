@@ -94,6 +94,7 @@ else{
                     <a href="indexUser.php" class="nav-item nav-link ">Home</a>
                     <a href="aboutUser.php" class="nav-item nav-link">About</a>
                     <a href="booksUser.php" class="nav-item nav-link active">Books</a>
+                    <a href="barChartUser.php" class="nav-item nav-link">Our Users Points</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Options</a>
                         <div class="dropdown-menu m-0">
@@ -102,6 +103,7 @@ else{
                             <a href="myBooksActionUser.php" class="dropdown-item">My Books</a>
                             <a href="uploadActionUser.php" class="dropdown-item">Upload a Book</a>
                             <a href="borrowActionUser.php" class="dropdown-item">Borrow a Book</a>
+                            <a href="returnActionUser.php" class="dropdown-item">Return a Book</a>
                             <a href="removeActionUser.php" class="dropdown-item">Remove a Book</a>
                             <a href="rateActionUser.php" class="dropdown-item">Rate User</a>
                             <a href="messageActionUser.php" class="dropdown-item">Send Message to User</a>
