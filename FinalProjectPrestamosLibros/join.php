@@ -97,7 +97,7 @@
 
     <div class="form-container">
         <h2>Type Your Information and Join Us!</h2>
-        <form>
+        <form action = "joinNewUser.php" method = "POST">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
