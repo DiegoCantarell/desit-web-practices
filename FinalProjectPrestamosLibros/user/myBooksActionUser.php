@@ -124,7 +124,7 @@ else{
     <!-- Navbar End -->
 
 
-
+    <h2>My Books</h2>
     <?php
     include "../class/sql.php";
     include "../class/booksClass.php";

@@ -119,7 +119,7 @@ else{
     </div>
     <!-- Navbar End -->
 
-
+    <h2>Borrow a Book</h2>
     <?php
     include "../class/sql.php";
     include "../class/booksClass.php";

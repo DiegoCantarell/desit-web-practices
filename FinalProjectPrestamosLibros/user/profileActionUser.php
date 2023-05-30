@@ -121,7 +121,7 @@ else{
     </div>
     <!-- Navbar End -->
 
-
+    <h2>My Profile</h2>
     <?php
         include "../class/sql.php";
         include "../class/usersClass.php";
