@@ -81,6 +81,7 @@ echo "The book name is: $bookName";
                     <a href="index.php" class="nav-item nav-link active">Home</a>
                     <a href="about.php" class="nav-item nav-link">About</a>
                     <a href="books.php" class="nav-item nav-link">Books</a>
+                    <a href="barChart.php" class="nav-item nav-link">Our Users Points</a>
 
                    
                 </div>
