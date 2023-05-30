@@ -20,7 +20,8 @@ include "class/usersClass.php";
     echo "Applying the class <br>";
     $users = new users();
     echo "<br>";
-    $nameOriginal = strtolower($users->getUserName($name));
+    $nameOriginal = $users->getUserName($name);
+    $name = strtolower($name);
     $passwordOriginal = $users->getUserPassword($name);
     echo  "Name Original = $nameOriginal<br>";
     echo  "password Original = $passwordOriginal<br>";
@@ -30,14 +31,19 @@ include "class/usersClass.php";
     
   
     
+  
     //echo "<br>";
    if( $nameOriginal == $name && $passwordOriginal == $password){
       header("Location: user/indexUser.php");
       /*
-      echo "$nameOriginal";
-      echo "$name";
+      echo "<br>$nameOriginal<br>";
+      echo "<br>$name<br>";
+      echo "<br>$passwordOriginal<br>";
+      echo "<br>$password<br>";
+      echo "<br>";
       echo "si";
       */
+      
     }
     else{
       header("Location: index.php");
@@ -49,6 +55,7 @@ include "class/usersClass.php";
       echo "<br>";
       echo "no";
       */
+      
     }
        // header("Location: indexUser.php");
     
