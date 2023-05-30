@@ -29,3 +29,16 @@ CREATE TABLE users(
 
 iNSERT INTO users values(null,"diego","diego@example.com","123","9511111111","29/06/2023",0);
 INSERT INTO users values(null,"max","max@redbull.com","123","9511111133","29/06/2023",0);
+
+
+
+CREATE TABLE admin(
+    id_admin INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    email VARCHAR(128) NOT NULL,
+    password VARCHAR(128) NOT NULL,
+    cellphone VARCHAR(128) NOT NULL,
+    shift VARCHAR(128) NOT NULL
+    
+);
+INSERT INTO admin values(null,"admin1","admin1@admins.com","123","9511111111","morning");
