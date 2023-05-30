@@ -363,6 +363,84 @@ class books{
       
     }
 
+    //Table to retun books
+    public function getTableBorrowedBooks($borrower){
+        $sql = "SELECT * FROM `books` where borrower = '".$borrower."'";
+        //echo $sql;
+        $this->result= $this->sql->ejecutar($sql);
+        
+        
+        if($this->result-> num_rows >0){
+
+            echo "<table class=\"table table-striped\">"; 
+
+            echo "<tr>";
+            
+            echo "<th>id_book</th>";
+            
+            echo "<th>title</th>";
+            
+            echo "<th>editorial</th>";
+            
+            echo "<th>subject</th>";
+           
+            echo "<th>availability</th>";
+     
+            echo "<th>release_date</th>";
+         
+            echo "<th>owner</th>";
+        
+            echo "<th>id_owner</th>";
+         
+            echo "<th>borrower</th>";
+         
+            echo "<th>borrow_start_date</th>";
+       
+            echo "<th>borrow_end_date</th>";
+
+            echo "<th>Return Book</th>";
+      
+            echo "</tr>";
+
+            while($row = $this->result->fetch_assoc()){
+                echo "<form action='../user/returnActionUserBackend.php' method = 'POST'>";
+                echo "<tr>";
+          
+                echo"<td>".$row["id_book"]."</td>";
+                echo "<input type='text' name='id_book' value=".$row["id_book"]." style='display:none;'>";
+     
+                echo"<td>".$row["title"]."</td>";
+      
+                echo"<td>".$row["editorial"]."</td>";
+         
+                echo"<td>".$row["subject"]."</td>";
+      
+                echo"<td>".$row["availability"]."</td>";
+        
+                echo"<td>".$row["release_date"]."</td>";
+        
+                echo"<td>".$row["owner"]."</td>";
+       
+                echo"<td>".$row["id_owner"]."</td>";
+
+                echo"<td>".$row["borrower"]."</td>";
+     
+                echo"<td>".$row["borrow_start_date"]."</td>";
+ 
+                echo"<td>".$row["borrow_end_date"]."</td>";
+
+                
+
+                echo"<td>  <button   class='btn btn-secondary px-4 px-lg-5' type = 'submit' name = 'send' >Return</button> </td>";
+    
+                echo "</tr>";
+          
+                echo "</form>";
+            }
+            echo "<table>";
+        }
+    }
+
 
     public function addBook( $id_book, $title, $editorial,$subject,$availability, $release_date,$owner,$id_owner,$borrower,$borrow_start_date,$borrow_end_date){
         //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
@@ -388,8 +466,16 @@ class books{
         //$sql = "update contacto set nom = '".$nom."',";
         $sql = "update books set availability= False, borrower ='".$borrower."',borrow_start_date='".$borrow_start_date."',borrow_end_date ='".$borrow_end_date."' where id_book = '".$id_book."'";
         $this->result= $this->sql->ejecutar($sql);
-        echo $sql;
-      }
+        //echo $sql;
+    }
+    public function undoBorrow($id_book){
+        //Query para hacer la actualización de contacto
+        //$sql = "update contacto set nom = '".$nom."',";
+        $sql = "update books set availability= True, borrower =null,borrow_start_date=null,borrow_end_date =null where id_book = '".$id_book."'";
+        $this->result= $this->sql->ejecutar($sql);
+        //echo $sql;
+        echo "<h3>The book have been returned succesfully</h3>";
+    }
 
 
 
