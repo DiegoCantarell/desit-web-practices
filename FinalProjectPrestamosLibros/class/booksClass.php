@@ -78,7 +78,7 @@ class books{
 
     //Get the books not associated with the user
     public function getTableBooksExcludingActualUser($id_owner){
-        $sql = "SELECT * FROM `books` where id_owner != '".$id_owner."'";
+        $sql = "SELECT * FROM `books` where id_owner != '".$id_owner."' AND availability = 1 ";
         //echo $sql;
         $this->result= $this->sql->ejecutar($sql);
         
@@ -88,57 +88,70 @@ class books{
             echo "<table class=\"table table-striped\">"; 
 
             echo "<tr>";
-            echo "<th></th>";
+            
             echo "<th>id_book</th>";
-            echo "<th></th>";
+            
             echo "<th>title</th>";
-            echo "<th></th>";
+            
             echo "<th>editorial</th>";
-            echo "<th></th>";
+            
             echo "<th>subject</th>";
-            echo "<th></th>";
+            
             echo "<th>availability</th>";
-            echo "<th></th>";
+            
             echo "<th>release_date</th>";
-            echo "<th></th>";
+            
             echo "<th>owner</th>";
-            echo "<th></th>";
+           
             echo "<th>id_owner</th>";
-            echo "<th></th>";
+            
             echo "<th>borrower</th>";
-            echo "<th></th>";
+            
             echo "<th>borrow_start_date</th>";
-            echo "<th></th>";
+            
             echo "<th>borrow_end_date</th>";
-            echo "<th></th>";
+            
+            echo "<th>Select Book</th>";
+            
             echo "</tr>";
 
-            while($row = $this->result->fetch_assoc()){
+            while($row = $this->result->fetch_assoc() ){
+                echo "<form action='../user/borrowActionUserBackend.php' method = 'POST'>";
                 echo "<tr>";
-                echo "<th></th>";
+                
                 echo"<td>".$row["id_book"]."</td>";
-                echo "<th></th>";
+                echo "<input type='text' name='id_book' value=".$row["id_book"]." style='display:none;'>";
+                
                 echo"<td>".$row["title"]."</td>";
-                echo "<th></th>";
+                echo "<input type='text' name='title' value=".$row["title"]." style='display:none;'>";
+                
                 echo"<td>".$row["editorial"]."</td>";
-                echo "<th></th>";
+           
                 echo"<td>".$row["subject"]."</td>";
-                echo "<th></th>";
+        
                 echo"<td>".$row["availability"]."</td>";
-                echo "<th></th>";
+                echo "<input type='text' name='availability' value=".$row["availability"]." style='display:none;'>";
+         
                 echo"<td>".$row["release_date"]."</td>";
-                echo "<th></th>";
+     
                 echo"<td>".$row["owner"]."</td>";
-                echo "<th></th>";
+         
                 echo"<td>".$row["id_owner"]."</td>";
-                echo "<th></th>";
+         
                 echo"<td>".$row["borrower"]."</td>";
-                echo "<th></th>";
-                echo"<td>".$row["borrow_start_date"]."</td>";
-                echo "<th></th>";
-                echo"<td>".$row["borrow_end_date"]."</td>";
-                echo "<th></th>";
+        
+                //echo"<td>".$row["borrow_start_date"]."</td>";
+                echo "<td> <input type='text' name='borrow_start_date' value=".$row["borrow_start_date"]." > </td>";
+          
+                //echo"<td>".$row["borrow_end_date"]."</td>";
+                echo "<td> <input type='text' name='borrow_end_date' value=".$row["borrow_end_date"]." > </td>";
+                
+            
+                echo"<td>  <button   class='btn btn-secondary px-4 px-lg-5' type = 'submit' name = 'send' >Select</button> </td>";
+          
+                echo "</form>";
                 echo "</tr>";
+                
             }
             echo "<table>";
         }
@@ -250,6 +263,7 @@ class books{
 
             while($row = $this->result->fetch_assoc()){
                 echo "<form action='../user/removeActionUserBackend.php' method = 'POST'>";
+                
                 echo "<tr>";
                 echo "<th></th>";
                 echo"<td>".$row["id_book"]."</td>";
@@ -368,6 +382,14 @@ class books{
     
 
     }
+
+    public function addBorrow($id_book,$borrower,$borrow_start_date,$borrow_end_date){
+        //Query para hacer la actualización de contacto
+        //$sql = "update contacto set nom = '".$nom."',";
+        $sql = "update books set availability= False, borrower ='".$borrower."',borrow_start_date='".$borrow_start_date."',borrow_end_date ='".$borrow_end_date."' where id_book = '".$id_book."'";
+        $this->result= $this->sql->ejecutar($sql);
+        echo $sql;
+      }
 
 
 
