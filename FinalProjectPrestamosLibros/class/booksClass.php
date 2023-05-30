@@ -450,7 +450,7 @@ class books{
         //echo $sql;
         $this->result= $this->sql->ejecutar($sql);
   
-      }
+    }
 
     public function deleteBook($id_book){
     $sql = "delete from books where id_book='". $id_book."' ";
