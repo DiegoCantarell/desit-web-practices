@@ -256,6 +256,16 @@ class users{
         //echo $sql;
     }
 
+    public function addUser( $id_user,$name,$email,$password,$cellphone,$registration_date ){
+        //DEFINIMOS LA EJECUCIÓN Y LA CONSULTA 
+  
+        //le mandamos la consulta por paso de parametros
+        $sql = "insert into users values(null,'". $name."', '". $email."', '". $password."', '". $cellphone."', '". $registration_date."', 0)";
+        //echo $sql;
+        $this->result= $this->sql->ejecutar($sql);
+  
+    }
+
 
 
    
