@@ -240,6 +240,74 @@ class users{
     }
 
 
+
+
+     //Get the books associated with the user to delete one of them
+     public function getTableUsersAdminDelete(){
+        $sql = "SELECT * FROM `users` ";
+        //echo $sql;
+        $this->result= $this->sql->ejecutar($sql);
+        
+        
+        if($this->result-> num_rows >0){
+
+            echo "<table class=\"table table-striped\">"; 
+
+            echo "<tr>";
+            echo "<th></th>";
+            echo "<th>id_user</th>";
+            echo "<th></th>";
+            echo "<th>name</th>";
+            echo "<th></th>";
+            echo "<th>email</th>";
+            echo "<th></th>";
+            echo "<th>password</th>";
+            echo "<th></th>";
+            echo "<th>cellphone</th>";
+            echo "<th></th>";
+            echo "<th>registration_date</th>";
+            echo "<th></th>";
+            echo "<th>Points</th>";
+            echo "<th></th>";
+            
+            echo "</tr>";
+
+            while($row = $this->result->fetch_assoc()){
+                echo "<form action='../admin/removeUserActionAdminBackend.php' method = 'POST'>";
+                
+                echo "<tr>";
+                echo "<th></th>";
+                echo"<td>".$row["id_user"]."</td>";
+                echo "<input type='text' name='id_user' value=".$row["id_user"]." style='display:none;'>";
+                echo "<th></th>";
+                echo"<td>".$row["name"]."</td>";
+                echo "<input type='text' name='name' value=".$row["name"]." style='display:none;'>";
+                echo "<th></th>";
+                echo"<td>".$row["email"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["password"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["cellphone"]."</td>";
+               
+                echo "<th></th>";
+                echo"<td>".$row["registration_date"]."</td>";
+                echo "<th></th>";
+                echo"<td>".$row["points"]."</td>";
+                
+                
+                echo"<td>  <button   class='btn btn-secondary px-4 px-lg-5' type = 'submit' name = 'send' >Delete</button> </td>";
+                echo "<th></th>";
+                echo "</tr>";
+                echo "</form>";
+            }
+            echo "<table>";
+        }
+    }
+
+
+
+
+
     public function updateUser($name,$email,$password,$cellphone){
         //Query para hacer la actualización de contacto
         //$sql = "update contacto set nom = '".$nom."',";
@@ -264,6 +332,14 @@ class users{
         //echo $sql;
         $this->result= $this->sql->ejecutar($sql);
   
+    }
+    public function deleteUser($id_user){
+        $sql = "delete from users where id_user='". $id_user."' ";
+        $this->result= $this->sql->ejecutar($sql);
+        //echo $sql;
+        //De esta manera puedo combinar los métodos sin perder la funcionalidad
+        
+    
     }
 
 
