@@ -135,7 +135,7 @@ else{
     $name = $users -> getUserName($name);
     $id_user = $users -> getUserId($name);
     echo "<br>The user id is: $id_user</br>";
-    $books -> getTableBooksActualUserDelete($id_user);
+    $books -> getTableBooksActualUserDelete();
     ?>
 
 
